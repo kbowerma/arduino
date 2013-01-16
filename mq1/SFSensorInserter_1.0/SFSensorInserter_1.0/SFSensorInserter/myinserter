@@ -1,0 +1,11 @@
+#cd `dirname $0`
+cd /Users/kylebowerman/mq1/SFSensorInserter_1.0/SFSensorInserter_1.0/SFSensorInserter/
+ ROOT_PATH=`pwd`
+if [ "$#" -ne 4 ]
+then
+ echo "usage: ./myinserter pin value type clientId"
+ exit
+fi
+
+java -Xms256M -Xmx1024M -cp classpath.jar: mq_test1.sfsensorinserter_1_0.SFSensorInserter --context_param pin=$1 --context_param value=$2 \
+--context_param type=$3 --context_param clientId=$4

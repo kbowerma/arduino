@@ -1,0 +1,5 @@
+
+Name: sfsensorinserter_1_0.jar
+Implementation-Vendor: Talend Open Studio
+Implementation-Version: 1.0
+

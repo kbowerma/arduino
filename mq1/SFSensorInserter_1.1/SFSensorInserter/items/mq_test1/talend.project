@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:TalendProperties="http://www.talend.org/properties">
+  <TalendProperties:Project xmi:id="_lsrh8JNmEd-t__VbHVm41w" label="mq_Test1" description="" language="java" technicalLabel="MQ_TEST1" local="true" folders="_moAhwZNmEd-t__VbHVm41w _moAhxZNmEd-t__VbHVm41w _moBI05NmEd-t__VbHVm41w _moBv4ZNmEd-t__VbHVm41w _moBv5ZNmEd-t__VbHVm41w _moC-ApNmEd-t__VbHVm41w _moC-BpNmEd-t__VbHVm41w _moEzNpNmEd-t__VbHVm41w _moJrspNmEd-t__VbHVm41w _moKSwpNmEd-t__VbHVm41w _moLg4pNmEd-t__VbHVm41w _moMH8pNmEd-t__VbHVm41w _moNWEJNmEd-t__VbHVm41w _moN9IJNmEd-t__VbHVm41w _moPLQpNmEd-t__VbHVm41w _moPLRpNmEd-t__VbHVm41w _jJ5HQhQqEeC5mtDvsyJ3Tg" author="_lvdwMJNmEd-t__VbHVm41w" productVersion="Talend Open Studio-4.1.0.M2_r45078">
+    <technicalStatus xmi:id="_mnngMJNmEd-t__VbHVm41w" label="development" code="DEV"/>
+    <technicalStatus xmi:id="_mnngMZNmEd-t__VbHVm41w" label="testing" code="TEST"/>
+    <technicalStatus xmi:id="_mnngMpNmEd-t__VbHVm41w" label="production" code="PROD"/>
+    <documentationStatus xmi:id="_mnkc4JNmEd-t__VbHVm41w" label="unchecked" code="UCK"/>
+    <documentationStatus xmi:id="_mnkc4ZNmEd-t__VbHVm41w" label="checked" code="CHK"/>
+    <documentationStatus xmi:id="_mnkc4pNmEd-t__VbHVm41w" label="validated" code="VAL"/>
+    <migrationTasks>org.talend.repository.localprovider.RemoveRoutineFolderTask</migrationTasks>
+    <migrationTasks>org.talend.repository.localprovider.model.migration.ChangeXmiSerialization</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.CleanFoldersMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.UpgradeRepositoryReferenceParameters</migrationTasks>
+    <migrationTasks>org.talend.designer.core.ui.views.statsandlogs.migration.UseOracleSIDAsDefaultOracleTypeMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametRunProcess</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametMysqlOutputBulkExec</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametCatcher</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.upgradetUniqRow</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametDbInputToOracle</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametDbInputToMySQL</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametDbInputToPostgresql</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametDbInputToMssql</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.updatetRowGenerator</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.upgradetWarntDiePriority</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametFileZipUnzip</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.changeRunBeforeAfterToThenRunMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RemoveSpaceInJobNameMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddProductAndMappingInDBConnectionEMFMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametFTPToFTP</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametNormalize</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametFlowMeter</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametFlowMeterCatcher</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.addQuot</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.upgradetRunJobRemoveQuotesMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.changetUniqRowLinks</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddDdColumn</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.convertOldPerlTypes</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.convertLabelForConnectionItem</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametXMLRPC</migrationTasks>
+    <migrationTasks>org.talend.repository.renametFileInputCSV</migrationTasks>
+    <migrationTasks>org.talend.repository.renametFileOutputCSV</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.upgradetAdvancedXML</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.DieOnErrorDefaultValueMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.renameRoutinesClassName</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddRenameOnFileCopyMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddPerlRefArrayPointer</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddPerlRefArrayPointer2</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.changeLookupColumnList</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddConnectorNameInConnections</migrationTasks>
+    <migrationTasks>org.talend.repository.connection.rename.runifok.oncomponentok</migrationTasks>
+    <migrationTasks>org.talend.repository.connection.rename.runerror.oncomponenterror</migrationTasks>
+    <migrationTasks>org.talend.repository.connection.rename.thenrun.onsubjobok</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ReplaceMultiFlowBytReplicateMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.upgradeAttributestAdvancedXML</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.upgradeAttributestFilterRow</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.upperCaseDbtypeOfCreateTable</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametBufferOutput</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametMapPersistent</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.ReplaceOldContextScriptCode</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.RenametFor</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.ReplaceSpaceCharForItemNameMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.ReplaceJavaKeywordsNameForContext</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MoveExcelSheetnameToSheetlist</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddDoubleQuoteTotMomMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MoveExcelSheetnameToSheetlistForJava</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.HandleOracleSchemaMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ChangeValueOfTLogRowChecks</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddQuotesToModuleListMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.UpdateTheJobsActionsOnTable</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametFTPToFTPGetMigrationTaskForPerl</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametForForPerl</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenameDbProductIdMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenameDbMacroMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ChangeSqlPatternValueMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametForCurrentIterationMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametFileInputBasic</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametFSFilterRows</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.UpgradetDenormalizeMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ReplaceRunJobLabelVariable</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddFamilyFieldProjectMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.QuoteWraptSSHcommandMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MigrationTaskForIssue4449</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MoveFileListFilemaskToFilemaskListForJava</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddOutputFileNameOntJasperOutputForJava</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametParseXMLRowTotExtractXMLFieldMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.FileInputRegexContextVariableMigrationTaskForSave</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.FileInputRegexContextVariableMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.EncryptDbPasswordMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.migration.renametAggregateRowOpt</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.SetContextMode</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddDoubleQuoteToAllDBSPNameMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.renameMultiSchemaToMSMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ChangeExtendInsertDefaultValueMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametFSUniq</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametLaunchDQAnalyseTotLaunchDQReports</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenameAccessDbVersionInConnection</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.changeReturnTypeOfServerAliveResult</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MigrationTaskForIssue7547</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametPivotOutputDelimitedTotPivotToColumnsDelimited</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RenametUnpivotRowTotPivotToRows</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddOneOptionAndReverseTheValueOnFSComponents</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ChangeDefaultValueMigrationTaskBug8562</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MigrateOracleJobSettingsParameter</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ChangeShareIdentityDefaultValueMigrationTaskIssue9519</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.VisibleComponentSettingsMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ChangeDefaultValueBug10232</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ConnectionAddUniqueNameMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MigrationTaskForIssue10862</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddTransmitOriginalContextFortRunJobMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MigrationTaskForIssue11632</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.RemoveBinFolderMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ThreeVersionstJavaFlexForBug11754</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.SalesforceTimeoutMigrationTask</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.MysqlOutputDBVersionForBug13250</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.ChangeJDBCDriverJarTypeForFeature12879</migrationTasks>
+    <migrationTasks>org.talend.repository.model.migration.AddBlockingFortRecordMatching</migrationTasks>
+    <componentsSettings xmi:id="_wFg-AJNmEd-t__VbHVm41w" name="tAccessBulkExec" family="Databases/Access"/>
+    <componentsSettings xmi:id="_wFg-AZNmEd-t__VbHVm41w" name="tAddCRCRow" family="Data_Quality"/>
+    <componentsSettings xmi:id="_wFhlEJNmEd-t__VbHVm41w" name="tAddLocationFromIP" family="Misc"/>
+    <componentsSettings xmi:id="_wFhlEZNmEd-t__VbHVm41w" name="tAdvancedFileOutputXML" family="File/Output"/>
+    <componentsSettings xmi:id="_wFhlEpNmEd-t__VbHVm41w" name="tAdvancedFileOutputXML" family="XML"/>
+    <componentsSettings xmi:id="_wFhlE5NmEd-t__VbHVm41w" name="tAdvancedHash" family="Technical"/>
+    <componentsSettings xmi:id="_wFhlFJNmEd-t__VbHVm41w" name="tAggregateRow" family="Processing"/>
+    <componentsSettings xmi:id="_wFhlFZNmEd-t__VbHVm41w" name="tAlfrescoOutput" family="Business/Alfresco"/>
+    <componentsSettings xmi:id="_wFhlFpNmEd-t__VbHVm41w" name="tApacheLogInput" family="File/Input"/>
+    <componentsSettings xmi:id="_wFhlF5NmEd-t__VbHVm41w" name="tArray" hidden="true" family="Technical"/>
+    <componentsSettings xmi:id="_wFhlGJNmEd-t__VbHVm41w" name="tArrayIn" hidden="true" family="Technical"/>
+    <componentsSettings xmi:id="_wFhlGZNmEd-t__VbHVm41w" name="tAS400Close" family="Databases/AS400"/>
+    <componentsSettings xmi:id="_wFhlGpNmEd-t__VbHVm41w" name="tAS400Connection" family="ELT/Connections"/>
+    <componentsSettings xmi:id="_wFhlG5NmEd-t__VbHVm41w" name="tAssert" family="Logs_Errors"/>
+    <componentsSettings xmi:id="_wFhlHJNmEd-t__VbHVm41w" name="tCentricCRMInput" family="Business/CentricCRM"/>
+    <componentsSettings xmi:id="_wFhlHZNmEd-t__VbHVm41w" name="tChangeFileEncoding" family="File/Management"/>
+    <componentsSettings xmi:id="_wFhlHpNmEd-t__VbHVm41w" name="tChangeFileEncoding" family="Data Quality"/>
+    <componentsSettings xmi:id="_wFhlH5NmEd-t__VbHVm41w" name="tCreateTable" family="Databases"/>
+    <componentsSettings xmi:id="_wFhlIJNmEd-t__VbHVm41w" name="tDB2BulkExec" family="Databases/DB2"/>
+    <componentsSettings xmi:id="_wFhlIZNmEd-t__VbHVm41w" name="tDB2SCD" family="Business_Intelligence/DB_SCD"/>
+    <componentsSettings xmi:id="_wFhlIpNmEd-t__VbHVm41w" name="tDBInput" family="Databases/DB_Generic"/>
+    <componentsSettings xmi:id="_wFnEoJNmEd-t__VbHVm41w" name="tDenormalize" family="Processing/Fields"/>
+    <componentsSettings xmi:id="_wFnEoZNmEd-t__VbHVm41w" name="tELT" family="ELT"/>
+    <componentsSettings xmi:id="_wFnrsJNmEd-t__VbHVm41w" name="tELTJDBCInput" family="ELT/DB_JDBC"/>
+    <componentsSettings xmi:id="_wFnrsZNmEd-t__VbHVm41w" name="tELTMSSqlInput" family="ELT/MSSql"/>
+    <componentsSettings xmi:id="_wFnrspNmEd-t__VbHVm41w" name="tELTMysqlInput" family="ELT/MySQL"/>
+    <componentsSettings xmi:id="_wFnrs5NmEd-t__VbHVm41w" name="tELTOracleInput" family="ELT/Oracle"/>
+    <componentsSettings xmi:id="_wFnrtJNmEd-t__VbHVm41w" name="tELTPostgresqlInput" family="ELT/PostgreSQL"/>
+    <componentsSettings xmi:id="_wFnrtZNmEd-t__VbHVm41w" name="tELTSybaseInput" family="ELT/Sybase"/>
+    <componentsSettings xmi:id="_wFnrtpNmEd-t__VbHVm41w" name="tELTTeradataInput" family="ELT/Teradata"/>
+    <componentsSettings xmi:id="_wFnrt5NmEd-t__VbHVm41w" name="tEXAInput" family="Databases/EXASolution"/>
+    <componentsSettings xmi:id="_wFnruJNmEd-t__VbHVm41w" name="tEXistConnection" family="Databases/eXist"/>
+    <componentsSettings xmi:id="_wFnruZNmEd-t__VbHVm41w" name="tExtractRegexFields" family="Data_Quality/Pattern matching"/>
+    <componentsSettings xmi:id="_wFnrupNmEd-t__VbHVm41w" name="tFileFetch" family="Internet"/>
+    <componentsSettings xmi:id="_wFnru5NmEd-t__VbHVm41w" name="tFileList" family="Orchestration"/>
+    <componentsSettings xmi:id="_wFoSwJNmEd-t__VbHVm41w" name="tFirebirdClose" family="Databases/FireBird"/>
+    <componentsSettings xmi:id="_wFoSwZNmEd-t__VbHVm41w" name="tFTPConnection" family="Internet/FTP"/>
+    <componentsSettings xmi:id="_wFoSwpNmEd-t__VbHVm41w" name="tGreenplumBulkExec" family="Databases/Greenplum"/>
+    <componentsSettings xmi:id="_wFoSw5NmEd-t__VbHVm41w" name="tGroovy" family="Custom_Code"/>
+    <componentsSettings xmi:id="_wFoSxJNmEd-t__VbHVm41w" name="tHashInput" hidden="true" family="Technical"/>
+    <componentsSettings xmi:id="_wFoSxZNmEd-t__VbHVm41w" name="tHashOutput" hidden="true" family="Technical"/>
+    <componentsSettings xmi:id="_wFoSxpNmEd-t__VbHVm41w" name="tHiveClose" family="Databases/Hive"/>
+    <componentsSettings xmi:id="_wFoSx5NmEd-t__VbHVm41w" name="tHL7Input" family="Business/Healthcare"/>
+    <componentsSettings xmi:id="_wFoSyJNmEd-t__VbHVm41w" name="tHSQLDbInput" family="Databases/HSQLDb"/>
+    <componentsSettings xmi:id="_wFoSyZNmEd-t__VbHVm41w" name="tInformixBulkExec" family="Databases/Informix"/>
+    <componentsSettings xmi:id="_wFo50JNmEd-t__VbHVm41w" name="tIngresBulkExec" family="Databases/Ingres"/>
+    <componentsSettings xmi:id="_wFo50ZNmEd-t__VbHVm41w" name="tInterbaseClose" family="Databases/Interbase"/>
+    <componentsSettings xmi:id="_wFo50pNmEd-t__VbHVm41w" name="tJasperOutput" family="Business_Intelligence/Jasper"/>
+    <componentsSettings xmi:id="_wFo505NmEd-t__VbHVm41w" name="tJavaDBInput" family="Databases/JavaDB"/>
+    <componentsSettings xmi:id="_wFo51JNmEd-t__VbHVm41w" name="tJDBCClose" family="Databases/DB_JDBC"/>
+    <componentsSettings xmi:id="_wFo51ZNmEd-t__VbHVm41w" name="tJMSInput" family="Internet/MOM and JMS"/>
+    <componentsSettings xmi:id="_wFo51pNmEd-t__VbHVm41w" name="tLDAPAttributesInput" family="Databases/LDAP"/>
+    <componentsSettings xmi:id="_wFo515NmEd-t__VbHVm41w" name="tLineChart" family="Business_Intelligence/Charts"/>
+    <componentsSettings xmi:id="_wFpg4JNmEd-t__VbHVm41w" name="tMaxDBInput" family="Databases/MaxDB"/>
+    <componentsSettings xmi:id="_wFpg4ZNmEd-t__VbHVm41w" name="tMDMBulkLoad" family="Talend MDM"/>
+    <componentsSettings xmi:id="_wFpg4pNmEd-t__VbHVm41w" name="tMicrosoftCrmInput" family="Business/Microsoft_CRM"/>
+    <componentsSettings xmi:id="_wFpg45NmEd-t__VbHVm41w" name="tMondrianInput" family="Business_Intelligence/OLAP_Cube"/>
+    <componentsSettings xmi:id="_wFpg5JNmEd-t__VbHVm41w" name="tMSAXInput" family="Business/Microsoft_AX"/>
+    <componentsSettings xmi:id="_wFpg5ZNmEd-t__VbHVm41w" name="tMSSqlBulkExec" family="Databases/MS_SQL_Server"/>
+    <componentsSettings xmi:id="_wFpg5pNmEd-t__VbHVm41w" name="tMysqlBulkExec" family="Databases/MySQL"/>
+    <componentsSettings xmi:id="_wFqH8JNmEd-t__VbHVm41w" name="tNetezzaBulkExec" family="Databases/Netezza"/>
+    <componentsSettings xmi:id="_wFqH8ZNmEd-t__VbHVm41w" name="tOpenbravoERPInput" family="Business/Open Bravo"/>
+    <componentsSettings xmi:id="_wFqH8pNmEd-t__VbHVm41w" name="tOracleBulkExec" family="Databases/Oracle"/>
+    <componentsSettings xmi:id="_wFqH85NmEd-t__VbHVm41w" name="tParAccelBulkExec" family="Databases/ParAccel"/>
+    <componentsSettings xmi:id="_wFqvAJNmEd-t__VbHVm41w" name="tPostgresPlusBulkExec" family="Databases/PostgresPlus"/>
+    <componentsSettings xmi:id="_wFqvAZNmEd-t__VbHVm41w" name="tPostgresqlBulkExec" family="Databases/PostgreSQL"/>
+    <componentsSettings xmi:id="_wFqvApNmEd-t__VbHVm41w" name="tRunJob" family="System"/>
+    <componentsSettings xmi:id="_wFqvA5NmEd-t__VbHVm41w" name="tSalesforceBulkExec" family="Business/Salesforce"/>
+    <componentsSettings xmi:id="_wFrWEJNmEd-t__VbHVm41w" name="tSAPCommit" family="Business/SAP"/>
+    <componentsSettings xmi:id="_wFrWEZNmEd-t__VbHVm41w" name="tSasInput" family="Databases/Sas"/>
+    <componentsSettings xmi:id="_wFskMJNmEd-t__VbHVm41w" name="tSCPClose" family="Internet/SCP"/>
+    <componentsSettings xmi:id="_wFtLQJNmEd-t__VbHVm41w" name="tSPSSInput" family="Business_Intelligence/SPSS"/>
+    <componentsSettings xmi:id="_wFtLQZNmEd-t__VbHVm41w" name="tSQLiteClose" family="Databases/SQLite"/>
+    <componentsSettings xmi:id="_wFtyUJNmEd-t__VbHVm41w" name="tSugarCRMInput" family="Business/SugarCRM"/>
+    <componentsSettings xmi:id="_wFtyUZNmEd-t__VbHVm41w" name="tSybaseBulkExec" family="Databases/Sybase"/>
+    <componentsSettings xmi:id="_wFtyUpNmEd-t__VbHVm41w" name="tTeradataClose" family="Databases/Teradata"/>
+    <componentsSettings xmi:id="_wFtyU5NmEd-t__VbHVm41w" name="tVectorWiseCommit" family="Databases/VectorWise"/>
+    <componentsSettings xmi:id="_wFuZYJNmEd-t__VbHVm41w" name="tVerticaBulkExec" family="Databases/Vertica"/>
+    <componentsSettings xmi:id="_wFuZYZNmEd-t__VbHVm41w" name="tVtigerCRMInput" family="Business/VtigerCRM"/>
+    <statAndLogsSettings xmi:id="_tiX2YJNnEd-pz4HwIS-H8g">
+      <parameters xmi:id="_tiZEgJNnEd-pz4HwIS-H8g">
+        <elementParameter xmi:id="_ti1wcJNnEd-pz4HwIS-H8g" field="CHECK" name="UPDATE_COMPONENTS" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wcZNnEd-pz4HwIS-H8g" field="CHECK" name="STATS_DEFAULT_PROJECTSETTING" value="true" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wcpNnEd-pz4HwIS-H8g" field="CHECK" name="ON_STATCATCHER_FLAG" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wc5NnEd-pz4HwIS-H8g" field="CHECK" name="ON_LOGCATCHER_FLAG" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wdJNnEd-pz4HwIS-H8g" field="CHECK" name="ON_METERCATCHER_FLAG" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wdZNnEd-pz4HwIS-H8g" field="CHECK" name="ON_CONSOLE_FLAG" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wdpNnEd-pz4HwIS-H8g" field="CHECK" name="ON_FILES_FLAG" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wd5NnEd-pz4HwIS-H8g" field="DIRECTORY" name="FILE_PATH" value="&quot;/Applications/TOS-All-r45078-V4.1.0M2/TalendOpenStudio-macosx-carbon.app/Contents/MacOS/workspace/.metadata&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1weJNnEd-pz4HwIS-H8g" field="TEXT" name="FILENAME_STATS" value="&quot;stats_file.txt&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1weZNnEd-pz4HwIS-H8g" field="TEXT" name="FILENAME_LOGS" value="&quot;logs_file.txt&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wepNnEd-pz4HwIS-H8g" field="TEXT" name="FILENAME_METTER" value="&quot;meter_file.txt&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1we5NnEd-pz4HwIS-H8g" field="ENCODING_TYPE" name="ENCODING" value="ISO-8859-15" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wfJNnEd-pz4HwIS-H8g" field="CHECK" name="ON_DATABASE_FLAG" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wfZNnEd-pz4HwIS-H8g" field="PROPERTY_TYPE" name="PROPERTY_TYPE" value="" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wfpNnEd-pz4HwIS-H8g" field="CLOSED_LIST" name="DB_TYPE" value="tDBOutput" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wf5NnEd-pz4HwIS-H8g" field="CLOSED_LIST" name="DB_VERSION" value="ojdbc14-10g.jar" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wgJNnEd-pz4HwIS-H8g" field="TEXT" name="HOST" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wgZNnEd-pz4HwIS-H8g" field="TEXT" name="PORT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wgpNnEd-pz4HwIS-H8g" field="TEXT" name="DBNAME" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wg5NnEd-pz4HwIS-H8g" field="TEXT" name="LOCAL_SERVICE_NAME" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1whJNnEd-pz4HwIS-H8g" field="TEXT" name="PROPERTIES" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1whZNnEd-pz4HwIS-H8g" field="TEXT" name="SCHEMA_DB" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1whpNnEd-pz4HwIS-H8g" field="TEXT" name="USER" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wh5NnEd-pz4HwIS-H8g" field="TEXT" name="PASS" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wiJNnEd-pz4HwIS-H8g" field="FILE" name="DBFILE" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wiZNnEd-pz4HwIS-H8g" field="DBTABLE" name="TABLE_STATS" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wipNnEd-pz4HwIS-H8g" field="DBTABLE" name="TABLE_LOGS" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wi5NnEd-pz4HwIS-H8g" field="DBTABLE" name="TABLE_METER" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wjJNnEd-pz4HwIS-H8g" field="CHECK" name="CATCH_RUNTIME_ERRORS" value="true" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wjZNnEd-pz4HwIS-H8g" field="CHECK" name="CATCH_USER_ERRORS" value="true" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wjpNnEd-pz4HwIS-H8g" field="CHECK" name="CATCH_USER_WARNING" value="true" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wj5NnEd-pz4HwIS-H8g" field="CHECK" name="CATCH_REALTIME_STATS" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wkJNnEd-pz4HwIS-H8g" field="TECHNICAL" name="ENCODING:ENCODING_TYPE" value="ISO-8859-15" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wkZNnEd-pz4HwIS-H8g" field="TECHNICAL" name="PROPERTY_TYPE:PROPERTY_TYPE" value="BUILT_IN" contextMode="false"/>
+        <elementParameter xmi:id="_ti1wkpNnEd-pz4HwIS-H8g" field="TECHNICAL" name="PROPERTY_TYPE:REPOSITORY_PROPERTY_TYPE" value="" contextMode="false"/>
+      </parameters>
+    </statAndLogsSettings>
+    <implicitContextSettings xmi:id="_ti2XgJNnEd-pz4HwIS-H8g">
+      <parameters xmi:id="_ti2XgZNnEd-pz4HwIS-H8g">
+        <elementParameter xmi:id="_tjG2MJNnEd-pz4HwIS-H8g" field="CHECK" name="UPDATE_COMPONENTS" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2MZNnEd-pz4HwIS-H8g" field="CHECK" name="IMPLICIT_TCONTEXTLOAD" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2MpNnEd-pz4HwIS-H8g" field="CHECK" name="IMPLICT_DEFAULT_PROJECTSETTING" value="true" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2M5NnEd-pz4HwIS-H8g" field="RADIO" name="FROM_FILE_FLAG_IMPLICIT_CONTEXT" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2NJNnEd-pz4HwIS-H8g" field="RADIO" name="FROM_DATABASE_FLAG_IMPLICIT_CONTEXT" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2NZNnEd-pz4HwIS-H8g" field="FILE" name="IMPLICIT_TCONTEXTLOAD_FILE" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2NpNnEd-pz4HwIS-H8g" field="TEXT" name="FIELDSEPARATOR" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2N5NnEd-pz4HwIS-H8g" field="PROPERTY_TYPE" name="PROPERTY_TYPE_IMPLICIT_CONTEXT" value="" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2OJNnEd-pz4HwIS-H8g" field="CLOSED_LIST" name="DB_TYPE_IMPLICIT_CONTEXT" value="" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2OZNnEd-pz4HwIS-H8g" field="CLOSED_LIST" name="DB_VERSION_IMPLICIT_CONTEXT" value="" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2OpNnEd-pz4HwIS-H8g" field="TEXT" name="HOST_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2O5NnEd-pz4HwIS-H8g" field="TEXT" name="PORT_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2PJNnEd-pz4HwIS-H8g" field="TEXT" name="DBNAME_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2PZNnEd-pz4HwIS-H8g" field="TEXT" name="LOCAL_SERVICE_NAME_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2PpNnEd-pz4HwIS-H8g" field="TEXT" name="PROPERTIES_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjG2P5NnEd-pz4HwIS-H8g" field="TEXT" name="SCHEMA_DB_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdQJNnEd-pz4HwIS-H8g" field="TEXT" name="USER_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdQZNnEd-pz4HwIS-H8g" field="TEXT" name="PASS_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdQpNnEd-pz4HwIS-H8g" field="FILE" name="DBFILE_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdQ5NnEd-pz4HwIS-H8g" field="DBTABLE" name="DBTABLE_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdRJNnEd-pz4HwIS-H8g" field="TEXT" name="QUERY_CONDITION_IMPLICIT_CONTEXT" value="&quot;&quot;" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdRZNnEd-pz4HwIS-H8g" field="CLOSED_LIST" name="LOAD_NEW_VARIABLE" value="" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdRpNnEd-pz4HwIS-H8g" field="CLOSED_LIST" name="NOT_LOAD_OLD_VARIABLE" value="" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdR5NnEd-pz4HwIS-H8g" field="CHECK" name="PRINT_OPERATIONS" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdSJNnEd-pz4HwIS-H8g" field="CHECK" name="DISABLE_ERROR" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdSZNnEd-pz4HwIS-H8g" field="CHECK" name="DISABLE_WARNINGS" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdSpNnEd-pz4HwIS-H8g" field="CHECK" name="DISABLE_INFO" value="false" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdS5NnEd-pz4HwIS-H8g" field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:PROPERTY_TYPE" value="" contextMode="false"/>
+        <elementParameter xmi:id="_tjHdTJNnEd-pz4HwIS-H8g" field="TECHNICAL" name="PROPERTY_TYPE_IMPLICIT_CONTEXT:REPOSITORY_PROPERTY_TYPE" value="" contextMode="false"/>
+      </parameters>
+    </implicitContextSettings>
+  </TalendProperties:Project>
+  <TalendProperties:User xmi:id="_lvdwMJNmEd-t__VbHVm41w" login="kyle.bowerman@gmail.com" password="D41D8CD98F00B204E9800998ECF8427E"/>
+  <TalendProperties:ItemState xmi:id="_moAhwJNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moAhwZNmEd-t__VbHVm41w" property="_moAhwpNmEd-t__VbHVm41w" state="_moAhwJNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moAhwpNmEd-t__VbHVm41w" id="_mn_6sJNmEd-t__VbHVm41w" label="businessProcess" creationDate="2010-07-19T14:51:13.243-0400" version="0.1" item="_moAhwZNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moAhxJNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moAhxZNmEd-t__VbHVm41w" property="_moBI0JNmEd-t__VbHVm41w" state="_moAhxJNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moBI0JNmEd-t__VbHVm41w" id="_moAhw5NmEd-t__VbHVm41w" label="businessProcessSVG" creationDate="2010-07-19T14:51:13.244-0400" version="0.1" item="_moAhxZNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moBI0pNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moBI05NmEd-t__VbHVm41w" property="_moBI1JNmEd-t__VbHVm41w" state="_moBI0pNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:ProcessItem" href="process/mq1_0.1.properties#_2EzxgpNnEd-pz4HwIS-H8g"/>
+    <children xsi:type="TalendProperties:ProcessItem" href="process/insertPinValueIntoSF_0.1.properties#_Bs7j0pNrEd-pz4HwIS-H8g"/>
+    <children xsi:type="TalendProperties:ProcessItem" href="process/insertpinTry2_0.1.properties#_5kszQpN8Ed-ZXKH3iqvbPw"/>
+    <children xsi:type="TalendProperties:ProcessItem" href="process/SFSensorInserter_1.1.properties#_XYJqkpOhEd-ZXKH3iqvbPw"/>
+    <children xsi:type="TalendProperties:ProcessItem" href="process/SFSensorInserter_1.0.properties#_XYJqkpOhEd-ZXKH3iqvbPw"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_moBI1JNmEd-t__VbHVm41w" id="_moBI0ZNmEd-t__VbHVm41w" label="process" creationDate="2010-07-19T14:51:13.245-0400" version="0.1" item="_moBI05NmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moBv4JNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moBv4ZNmEd-t__VbHVm41w" property="_moBv4pNmEd-t__VbHVm41w" state="_moBv4JNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moBv4pNmEd-t__VbHVm41w" id="_moBI1ZNmEd-t__VbHVm41w" label="context" creationDate="2010-07-19T14:51:13.245-0400" version="0.1" item="_moBv4ZNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moBv5JNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moBv5ZNmEd-t__VbHVm41w" property="_moBv5pNmEd-t__VbHVm41w" state="_moBv5JNmEd-t__VbHVm41w" children="_moCW8pNmEd-t__VbHVm41w _moCW9pNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moBv5pNmEd-t__VbHVm41w" id="_moBv45NmEd-t__VbHVm41w" label="code" creationDate="2010-07-19T14:51:13.246-0400" version="0.1" item="_moBv5ZNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moCW8ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moCW8pNmEd-t__VbHVm41w" property="_moCW85NmEd-t__VbHVm41w" state="_moCW8ZNmEd-t__VbHVm41w" children="_mtDZ0ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moCW85NmEd-t__VbHVm41w" id="_moCW8JNmEd-t__VbHVm41w" label="routines" creationDate="2010-07-19T14:51:13.247-0400" version="0.1" item="_moCW8pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moCW9ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moCW9pNmEd-t__VbHVm41w" property="_moCW95NmEd-t__VbHVm41w" state="_moCW9ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moCW95NmEd-t__VbHVm41w" id="_moCW9JNmEd-t__VbHVm41w" label="snippets" creationDate="2010-07-19T14:51:13.247-0400" version="0.1" item="_moCW9pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moC-AZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moC-ApNmEd-t__VbHVm41w" property="_moC-A5NmEd-t__VbHVm41w" state="_moC-AZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moC-A5NmEd-t__VbHVm41w" id="_moC-AJNmEd-t__VbHVm41w" label="documentations" creationDate="2010-07-19T14:51:13.248-0400" version="0.1" item="_moC-ApNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moC-BZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moC-BpNmEd-t__VbHVm41w" property="_moC-B5NmEd-t__VbHVm41w" state="_moC-BZNmEd-t__VbHVm41w" children="_moDlEpNmEd-t__VbHVm41w _moEMIpNmEd-t__VbHVm41w _moEzMpNmEd-t__VbHVm41w _moFaQpNmEd-t__VbHVm41w _moFaRpNmEd-t__VbHVm41w _moGBU5NmEd-t__VbHVm41w _moGoYpNmEd-t__VbHVm41w _moGoZpNmEd-t__VbHVm41w _moHPcpNmEd-t__VbHVm41w _moHPdpNmEd-t__VbHVm41w _moH2gpNmEd-t__VbHVm41w _moIdkpNmEd-t__VbHVm41w _moIdlpNmEd-t__VbHVm41w _moJEopNmEd-t__VbHVm41w _moJEppNmEd-t__VbHVm41w _moK50ZNmEd-t__VbHVm41w _moOkNpNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moC-B5NmEd-t__VbHVm41w" id="_moC-BJNmEd-t__VbHVm41w" label="metadata" creationDate="2010-07-19T14:51:13.248-0400" version="0.1" item="_moC-BpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moDlEZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moDlEpNmEd-t__VbHVm41w" property="_moDlE5NmEd-t__VbHVm41w" state="_moDlEZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moDlE5NmEd-t__VbHVm41w" id="_moDlEJNmEd-t__VbHVm41w" label="rules" creationDate="2010-07-19T14:51:13.249-0400" version="0.1" item="_moDlEpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moEMIZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moEMIpNmEd-t__VbHVm41w" property="_moEMI5NmEd-t__VbHVm41w" state="_moEMIZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moEMI5NmEd-t__VbHVm41w" id="_moEMIJNmEd-t__VbHVm41w" label="connections" creationDate="2010-07-19T14:51:13.250-0400" version="0.1" item="_moEMIpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moEzMZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moEzMpNmEd-t__VbHVm41w" property="_moEzM5NmEd-t__VbHVm41w" state="_moEzMZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moEzM5NmEd-t__VbHVm41w" id="_moEzMJNmEd-t__VbHVm41w" label="sapconnections" creationDate="2010-07-19T14:51:13.251-0400" version="0.1" item="_moEzMpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moEzNZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moEzNpNmEd-t__VbHVm41w" property="_moEzN5NmEd-t__VbHVm41w" state="_moEzNZNmEd-t__VbHVm41w" children="_mwfIUpNmEd-t__VbHVm41w _mxfN4pNmEd-t__VbHVm41w _myM_kpNmEd-t__VbHVm41w _mzlfopNmEd-t__VbHVm41w _m0TRU5NmEd-t__VbHVm41w _m1CRIpNmEd-t__VbHVm41w _m1rxYpNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moEzN5NmEd-t__VbHVm41w" id="_moEzNJNmEd-t__VbHVm41w" label="sqlPatterns" creationDate="2010-07-19T14:51:13.251-0400" version="0.1" item="_moEzNpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moFaQZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moFaQpNmEd-t__VbHVm41w" property="_moFaQ5NmEd-t__VbHVm41w" state="_moFaQZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moFaQ5NmEd-t__VbHVm41w" id="_moFaQJNmEd-t__VbHVm41w" label="fileEBCDIC" creationDate="2010-07-19T14:51:13.252-0400" version="0.1" item="_moFaQpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moFaRZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moFaRpNmEd-t__VbHVm41w" property="_moGBUJNmEd-t__VbHVm41w" state="_moFaRZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moGBUJNmEd-t__VbHVm41w" id="_moFaRJNmEd-t__VbHVm41w" label="fileHL7" creationDate="2010-07-19T14:51:13.252-0400" version="0.1" item="_moFaRpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moGBUpNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moGBU5NmEd-t__VbHVm41w" property="_moGBVJNmEd-t__VbHVm41w" state="_moGBUpNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moGBVJNmEd-t__VbHVm41w" id="_moGBUZNmEd-t__VbHVm41w" label="MDMconnections" creationDate="2010-07-19T14:51:13.253-0400" version="0.1" item="_moGBU5NmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moGoYZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moGoYpNmEd-t__VbHVm41w" property="_moGoY5NmEd-t__VbHVm41w" state="_moGoYZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moGoY5NmEd-t__VbHVm41w" id="_moGoYJNmEd-t__VbHVm41w" label="fileDelimited" creationDate="2010-07-19T14:51:13.254-0400" version="0.1" item="_moGoYpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moGoZZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moGoZpNmEd-t__VbHVm41w" property="_moGoZ5NmEd-t__VbHVm41w" state="_moGoZZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moGoZ5NmEd-t__VbHVm41w" id="_moGoZJNmEd-t__VbHVm41w" label="filePositional" creationDate="2010-07-19T14:51:13.254-0400" version="0.1" item="_moGoZpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moHPcZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moHPcpNmEd-t__VbHVm41w" property="_moHPc5NmEd-t__VbHVm41w" state="_moHPcZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moHPc5NmEd-t__VbHVm41w" id="_moHPcJNmEd-t__VbHVm41w" label="fileRegex" creationDate="2010-07-19T14:51:13.255-0400" version="0.1" item="_moHPcpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moHPdZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moHPdpNmEd-t__VbHVm41w" property="_moHPd5NmEd-t__VbHVm41w" state="_moHPdZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moHPd5NmEd-t__VbHVm41w" id="_moHPdJNmEd-t__VbHVm41w" label="fileXml" creationDate="2010-07-19T14:51:13.255-0400" version="0.1" item="_moHPdpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moH2gZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moH2gpNmEd-t__VbHVm41w" property="_moH2g5NmEd-t__VbHVm41w" state="_moH2gZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moH2g5NmEd-t__VbHVm41w" id="_moH2gJNmEd-t__VbHVm41w" label="fileLdif" creationDate="2010-07-19T14:51:13.256-0400" version="0.1" item="_moH2gpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moIdkZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moIdkpNmEd-t__VbHVm41w" property="_moIdk5NmEd-t__VbHVm41w" state="_moIdkZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moIdk5NmEd-t__VbHVm41w" id="_moIdkJNmEd-t__VbHVm41w" label="fileExcel" creationDate="2010-07-19T14:51:13.257-0400" version="0.1" item="_moIdkpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moIdlZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moIdlpNmEd-t__VbHVm41w" property="_moIdl5NmEd-t__VbHVm41w" state="_moIdlZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SalesforceSchemaConnectionItem" href="metadata/SalesforceSchema/sensor_0.1.properties#_ARGCgpNsEd-pz4HwIS-H8g"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_moIdl5NmEd-t__VbHVm41w" id="_moIdlJNmEd-t__VbHVm41w" label="SalesforceSchema" creationDate="2010-07-19T14:51:13.257-0400" version="0.1" item="_moIdlpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moJEoZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moJEopNmEd-t__VbHVm41w" property="_moJEo5NmEd-t__VbHVm41w" state="_moJEoZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moJEo5NmEd-t__VbHVm41w" id="_moJEoJNmEd-t__VbHVm41w" label="genericSchema" creationDate="2010-07-19T14:51:13.258-0400" version="0.1" item="_moJEopNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moJEpZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moJEppNmEd-t__VbHVm41w" property="_moJEp5NmEd-t__VbHVm41w" state="_moJEpZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moJEp5NmEd-t__VbHVm41w" id="_moJEpJNmEd-t__VbHVm41w" label="LDAPSchema" creationDate="2010-07-19T14:51:13.258-0400" version="0.1" item="_moJEppNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moJrsZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moJrspNmEd-t__VbHVm41w" property="_moJrs5NmEd-t__VbHVm41w" state="_moJrsZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moJrs5NmEd-t__VbHVm41w" id="_moJrsJNmEd-t__VbHVm41w" label="joblets" creationDate="2010-07-19T14:51:13.259-0400" version="0.1" item="_moJrspNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moKSwZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moKSwpNmEd-t__VbHVm41w" property="_moKSw5NmEd-t__VbHVm41w" state="_moKSwZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moKSw5NmEd-t__VbHVm41w" id="_moKSwJNmEd-t__VbHVm41w" label="libs" creationDate="2010-07-19T14:51:13.260-0400" version="0.1" item="_moKSwpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moK50JNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moK50ZNmEd-t__VbHVm41w" property="_moK50pNmEd-t__VbHVm41w" state="_moK50JNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moK50pNmEd-t__VbHVm41w" id="_moKSxJNmEd-t__VbHVm41w" label="WSDLSchema" creationDate="2010-07-19T14:51:13.260-0400" version="0.1" item="_moK50ZNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moLg4ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moLg4pNmEd-t__VbHVm41w" property="_moLg45NmEd-t__VbHVm41w" state="_moLg4ZNmEd-t__VbHVm41w" children="_moLg5pNmEd-t__VbHVm41w _moLg6pNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moLg45NmEd-t__VbHVm41w" id="_moLg4JNmEd-t__VbHVm41w" label="TDQ_Data Profiling" creationDate="2010-07-19T14:51:13.262-0400" version="0.1" item="_moLg4pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moLg5ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moLg5pNmEd-t__VbHVm41w" property="_moLg55NmEd-t__VbHVm41w" state="_moLg5ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moLg55NmEd-t__VbHVm41w" id="_moLg5JNmEd-t__VbHVm41w" label="Analyses" creationDate="2010-07-19T14:51:13.262-0400" version="0.1" item="_moLg5pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moLg6ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moLg6pNmEd-t__VbHVm41w" property="_moLg65NmEd-t__VbHVm41w" state="_moLg6ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moLg65NmEd-t__VbHVm41w" id="_moLg6JNmEd-t__VbHVm41w" label="Reports" creationDate="2010-07-19T14:51:13.262-0400" version="0.1" item="_moLg6pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moMH8ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moMH8pNmEd-t__VbHVm41w" property="_moMH85NmEd-t__VbHVm41w" state="_moMH8ZNmEd-t__VbHVm41w" children="_moMvAJNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moMH85NmEd-t__VbHVm41w" id="_moMH8JNmEd-t__VbHVm41w" label="DQ_Metadata" creationDate="2010-07-19T14:51:13.263-0400" version="0.1" item="_moMH8pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moMH9ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moMvAJNmEd-t__VbHVm41w" property="_moMvAZNmEd-t__VbHVm41w" state="_moMH9ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moMvAZNmEd-t__VbHVm41w" id="_moMH9JNmEd-t__VbHVm41w" label="DB Connections" creationDate="2010-07-19T14:51:13.263-0400" version="0.1" item="_moMvAJNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moMvA5NmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moNWEJNmEd-t__VbHVm41w" property="_moNWEZNmEd-t__VbHVm41w" state="_moMvA5NmEd-t__VbHVm41w" children="_moNWFJNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moNWEZNmEd-t__VbHVm41w" id="_moMvApNmEd-t__VbHVm41w" label="TDQ_Metadata" creationDate="2010-07-19T14:51:13.264-0400" version="0.1" item="_moNWEJNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moNWE5NmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moNWFJNmEd-t__VbHVm41w" property="_moNWFZNmEd-t__VbHVm41w" state="_moNWE5NmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moNWFZNmEd-t__VbHVm41w" id="_moNWEpNmEd-t__VbHVm41w" label="MDM Connections" creationDate="2010-07-19T14:51:13.265-0400" version="0.1" item="_moNWFJNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moNWF5NmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moN9IJNmEd-t__VbHVm41w" property="_moN9IZNmEd-t__VbHVm41w" state="_moNWF5NmEd-t__VbHVm41w" children="_moN9JJNmEd-t__VbHVm41w _moN9KJNmEd-t__VbHVm41w _moOkMpNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moN9IZNmEd-t__VbHVm41w" id="_moNWFpNmEd-t__VbHVm41w" label="TDQ_Libraries" creationDate="2010-07-19T14:51:13.265-0400" version="0.1" item="_moN9IJNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moN9I5NmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moN9JJNmEd-t__VbHVm41w" property="_moN9JZNmEd-t__VbHVm41w" state="_moN9I5NmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moN9JZNmEd-t__VbHVm41w" id="_moN9IpNmEd-t__VbHVm41w" label="Rules" creationDate="2010-07-19T14:51:13.266-0400" version="0.1" item="_moN9JJNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moN9J5NmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moN9KJNmEd-t__VbHVm41w" property="_moN9KZNmEd-t__VbHVm41w" state="_moN9J5NmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moN9KZNmEd-t__VbHVm41w" id="_moN9JpNmEd-t__VbHVm41w" label="Indicators" creationDate="2010-07-19T14:51:13.266-0400" version="0.1" item="_moN9KJNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moOkMZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moOkMpNmEd-t__VbHVm41w" property="_moOkM5NmEd-t__VbHVm41w" state="_moOkMZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moOkM5NmEd-t__VbHVm41w" id="_moOkMJNmEd-t__VbHVm41w" label="Patterns" creationDate="2010-07-19T14:51:13.267-0400" version="0.1" item="_moOkMpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moOkNZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moOkNpNmEd-t__VbHVm41w" property="_moOkN5NmEd-t__VbHVm41w" state="_moOkNZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moOkN5NmEd-t__VbHVm41w" id="_moOkNJNmEd-t__VbHVm41w" label="header_footer" creationDate="2010-07-19T14:51:13.267-0400" version="0.1" item="_moOkNpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moPLQZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moPLQpNmEd-t__VbHVm41w" property="_moPLQ5NmEd-t__VbHVm41w" state="_moPLQZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moPLQ5NmEd-t__VbHVm41w" id="_moPLQJNmEd-t__VbHVm41w" label="temp" creationDate="2010-07-19T14:51:13.268-0400" version="0.1" item="_moPLQpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moPLRZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moPLRpNmEd-t__VbHVm41w" property="_moPyUJNmEd-t__VbHVm41w" state="_moPLRZNmEd-t__VbHVm41w" children="_moPyU5NmEd-t__VbHVm41w _moQZYpNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moPyUJNmEd-t__VbHVm41w" id="_moPLRJNmEd-t__VbHVm41w" label="images" creationDate="2010-07-19T14:51:13.268-0400" version="0.1" item="_moPLRpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moPyUpNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moPyU5NmEd-t__VbHVm41w" property="_moPyVJNmEd-t__VbHVm41w" state="_moPyUpNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moPyVJNmEd-t__VbHVm41w" id="_moPyUZNmEd-t__VbHVm41w" label="job_outlines" creationDate="2010-07-19T14:51:13.269-0400" version="0.1" item="_moPyU5NmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_moQZYZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_moQZYpNmEd-t__VbHVm41w" property="_moQZY5NmEd-t__VbHVm41w" state="_moQZYZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_moQZY5NmEd-t__VbHVm41w" id="_moQZYJNmEd-t__VbHVm41w" label="joblet_outlines" creationDate="2010-07-19T14:51:13.270-0400" version="0.1" item="_moQZYpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mtDZ0JNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mtDZ0ZNmEd-t__VbHVm41w" property="_mtDZ0pNmEd-t__VbHVm41w" state="_mtDZ0JNmEd-t__VbHVm41w">
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/DataOperation_0.1.properties#_muY2kpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/Mathematical_0.1.properties#_mvZjMpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/Numeric_0.1.properties#_mvoMspNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/Relational_0.1.properties#_mvu6Y5NmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/StringHandling_0.1.properties#_mv1BApNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/TalendDataGenerator_0.1.properties#_mv7Ho5NmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/TalendDate_0.1.properties#_mwBOQ5NmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:RoutineItem" href="code/routines/system/TalendString_0.1.properties#_mwHU4JNmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_mtDZ0pNmEd-t__VbHVm41w" id="_mtCywJNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:13.772-0400" version="0.1" item="_mtDZ0ZNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mwfIUZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mwfIUpNmEd-t__VbHVm41w" property="_mwfIU5NmEd-t__VbHVm41w" state="_mwfIUZNmEd-t__VbHVm41w" children="_mwkA0pNmEd-t__VbHVm41w _mwo5UpNmEd-t__VbHVm41w"/>
+  <TalendProperties:Property xmi:id="_mwfIU5NmEd-t__VbHVm41w" id="_mwfIUJNmEd-t__VbHVm41w" label="Generic" creationDate="2010-07-19T14:51:14.133-0400" version="0.1" item="_mwfIUpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mwkA0ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mwkA0pNmEd-t__VbHVm41w" property="_mwkA05NmEd-t__VbHVm41w" state="_mwkA0ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Generic/system/Aggregate_0.1.properties#_mwtx0pNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Generic/system/Commit_0.1.properties#_mw0fgpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Generic/system/DropSourceTable_0.1.properties#_mw5YA5NmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Generic/system/DropTargetTable_0.1.properties#_mxAFspNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Generic/system/FilterColumns_0.1.properties#_mxE-MpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Generic/system/FilterRow_0.1.properties#_mxJ2spNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Generic/system/Rollback_0.1.properties#_mxOvMpNmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_mwkA05NmEd-t__VbHVm41w" id="_mwkA0JNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:14.141-0400" version="0.1" item="_mwkA0pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mwo5UZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mwo5UpNmEd-t__VbHVm41w" property="_mwo5U5NmEd-t__VbHVm41w" state="_mwo5UZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_mwo5U5NmEd-t__VbHVm41w" id="_mwo5UJNmEd-t__VbHVm41w" label="UserDefined" creationDate="2010-07-19T14:51:14.149-0400" version="0.1" item="_mwo5UpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mxfN4ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mxfN4pNmEd-t__VbHVm41w" property="_mxfN45NmEd-t__VbHVm41w" state="_mxfN4ZNmEd-t__VbHVm41w" children="_mxjfUpNmEd-t__VbHVm41w _mxnJspNmEd-t__VbHVm41w"/>
+  <TalendProperties:Property xmi:id="_mxfN45NmEd-t__VbHVm41w" id="_mxfN4JNmEd-t__VbHVm41w" label="Hive" creationDate="2010-07-19T14:51:14.238-0400" version="0.1" item="_mxfN4pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mxjfUZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mxjfUpNmEd-t__VbHVm41w" property="_mxjfU5NmEd-t__VbHVm41w" state="_mxjfUZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Hive/system/HiveAggregate_0.1.properties#_mxqNApNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Hive/system/HiveCreateSourceTable_0.1.properties#_mxuecpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Hive/system/HiveCreateTargetTable_0.1.properties#_mxz-ApNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Hive/system/HiveDropSourceTable_0.1.properties#_mx42gpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Hive/system/HiveDropTargetTable_0.1.properties#_mx9vApNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Hive/system/HiveFilterColumns_0.1.properties#_myCAc5NmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Hive/system/HiveFilterRow_0.1.properties#_myIHE5NmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_mxjfU5NmEd-t__VbHVm41w" id="_mxjfUJNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:14.245-0400" version="0.1" item="_mxjfUpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mxnJsZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mxnJspNmEd-t__VbHVm41w" property="_mxnJs5NmEd-t__VbHVm41w" state="_mxnJsZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_mxnJs5NmEd-t__VbHVm41w" id="_mxnJsJNmEd-t__VbHVm41w" label="UserDefined" creationDate="2010-07-19T14:51:14.251-0400" version="0.1" item="_mxnJspNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_myM_kZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_myM_kpNmEd-t__VbHVm41w" property="_myM_k5NmEd-t__VbHVm41w" state="_myM_kZNmEd-t__VbHVm41w" children="_myQC4pNmEd-t__VbHVm41w _myTtQpNmEd-t__VbHVm41w"/>
+  <TalendProperties:Property xmi:id="_myM_k5NmEd-t__VbHVm41w" id="_myM_kJNmEd-t__VbHVm41w" label="MySQL" creationDate="2010-07-19T14:51:14.313-0400" version="0.1" item="_myM_kpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_myQC4ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_myQC4pNmEd-t__VbHVm41w" property="_myQC45NmEd-t__VbHVm41w" state="_myQC4ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/MySQL/system/MySQLAggregate_0.1.properties#_myWwkpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/MySQL/system/MySQLCreateSourceTable_0.1.properties#_myc3MZNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/MySQL/system/MySQLCreateTargetTable_0.1.properties#_myhvspNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/MySQL/system/MySQLDropSourceTable_0.1.properties#_mymoMpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/MySQL/system/MySQLDropTargetTable_0.1.properties#_my9Ng5NmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/MySQL/system/MySQLFilterColumns_0.1.properties#_mzCGApNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/MySQL/system/MySQLFilterRow_0.1.properties#_mzGXcpNmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_myQC45NmEd-t__VbHVm41w" id="_myQC4JNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:14.318-0400" version="0.1" item="_myQC4pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_myTtQZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_myTtQpNmEd-t__VbHVm41w" property="_myTtQ5NmEd-t__VbHVm41w" state="_myTtQZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_myTtQ5NmEd-t__VbHVm41w" id="_myTtQJNmEd-t__VbHVm41w" label="UserDefined" creationDate="2010-07-19T14:51:14.324-0400" version="0.1" item="_myTtQpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mzlfoZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mzlfopNmEd-t__VbHVm41w" property="_mzlfo5NmEd-t__VbHVm41w" state="_mzlfoZNmEd-t__VbHVm41w" children="_mzoi8pNmEd-t__VbHVm41w _mzrmQpNmEd-t__VbHVm41w"/>
+  <TalendProperties:Property xmi:id="_mzlfo5NmEd-t__VbHVm41w" id="_mzlfoJNmEd-t__VbHVm41w" label="Netezza" creationDate="2010-07-19T14:51:14.458-0400" version="0.1" item="_mzlfopNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mzoi8ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mzoi8pNmEd-t__VbHVm41w" property="_mzoi85NmEd-t__VbHVm41w" state="_mzoi8ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Netezza/system/NetezzaAggregate_0.1.properties#_mzupkpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Netezza/system/NetezzaCreateSourceTable_0.1.properties#_mz1XQpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Netezza/system/NetezzaCreateTargetTable_0.1.properties#_mz5ospNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Netezza/system/NetezzaDropSourceTable_0.1.properties#_mz96IpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Netezza/system/NetezzaDropTargetTable_0.1.properties#_m0CLkpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Netezza/system/NetezzaFilterColumns_0.1.properties#_m0HEEpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Netezza/system/NetezzaFilterRow_0.1.properties#_m0MjoZNmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_mzoi85NmEd-t__VbHVm41w" id="_mzoi8JNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:14.463-0400" version="0.1" item="_mzoi8pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_mzrmQZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_mzrmQpNmEd-t__VbHVm41w" property="_mzrmQ5NmEd-t__VbHVm41w" state="_mzrmQZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_mzrmQ5NmEd-t__VbHVm41w" id="_mzrmQJNmEd-t__VbHVm41w" label="UserDefined" creationDate="2010-07-19T14:51:14.468-0400" version="0.1" item="_mzrmQpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m0TRUpNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m0TRU5NmEd-t__VbHVm41w" property="_m0TRVJNmEd-t__VbHVm41w" state="_m0TRUpNmEd-t__VbHVm41w" children="_m0WUopNmEd-t__VbHVm41w _m0Z_AJNmEd-t__VbHVm41w"/>
+  <TalendProperties:Property xmi:id="_m0TRVJNmEd-t__VbHVm41w" id="_m0TRUZNmEd-t__VbHVm41w" label="Oracle" creationDate="2010-07-19T14:51:14.533-0400" version="0.1" item="_m0TRU5NmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m0WUoZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m0WUopNmEd-t__VbHVm41w" property="_m0WUo5NmEd-t__VbHVm41w" state="_m0WUoZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Oracle/system/OracleAggregate_0.1.properties#_m0cbQpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Oracle/system/OracleCreateSourceTable_0.1.properties#_m0h60pNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Oracle/system/OracleCreateTargetTable_0.1.properties#_m0mMQpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Oracle/system/OracleDropSourceTable_0.1.properties#_m0rEwpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Oracle/system/OracleDropTargetTable_0.1.properties#_m0v9QpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Oracle/system/OracleFilterColumns_0.1.properties#_m05HMpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Oracle/system/OracleFilterRow_0.1.properties#_m09_spNmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_m0WUo5NmEd-t__VbHVm41w" id="_m0WUoJNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:14.538-0400" version="0.1" item="_m0WUopNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m0ZX8ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m0Z_AJNmEd-t__VbHVm41w" property="_m0Z_AZNmEd-t__VbHVm41w" state="_m0ZX8ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_m0Z_AZNmEd-t__VbHVm41w" id="_m0ZX8JNmEd-t__VbHVm41w" label="UserDefined" creationDate="2010-07-19T14:51:14.543-0400" version="0.1" item="_m0Z_AJNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m1CRIZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m1CRIpNmEd-t__VbHVm41w" property="_m1CRI5NmEd-t__VbHVm41w" state="_m1CRIZNmEd-t__VbHVm41w" children="_m1F7gpNmEd-t__VbHVm41w _m1I-0pNmEd-t__VbHVm41w"/>
+  <TalendProperties:Property xmi:id="_m1CRI5NmEd-t__VbHVm41w" id="_m1CRIJNmEd-t__VbHVm41w" label="ParAccel" creationDate="2010-07-19T14:51:14.610-0400" version="0.1" item="_m1CRIpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m1F7gZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m1F7gpNmEd-t__VbHVm41w" property="_m1F7g5NmEd-t__VbHVm41w" state="_m1F7gZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/ParAccel/system/ParAccelAggregate_0.1.properties#_m1MCIpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/ParAccel/system/ParAccelCommit_0.1.properties#_m1QTkpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/ParAccel/system/ParAccelDropSourceTable_0.1.properties#_m1VzIpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/ParAccel/system/ParAccelDropTargetTable_0.1.properties#_m1aropNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/ParAccel/system/ParAccelFilterColumns_0.1.properties#_m1e9EpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/ParAccel/system/ParAccelFilterRow_0.1.properties#_m1jOgpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/ParAccel/system/ParAccelRollback_0.1.properties#_m1nf85NmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_m1F7g5NmEd-t__VbHVm41w" id="_m1F7gJNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:14.616-0400" version="0.1" item="_m1F7gpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m1I-0ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m1I-0pNmEd-t__VbHVm41w" property="_m1I-05NmEd-t__VbHVm41w" state="_m1I-0ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_m1I-05NmEd-t__VbHVm41w" id="_m1I-0JNmEd-t__VbHVm41w" label="UserDefined" creationDate="2010-07-19T14:51:14.621-0400" version="0.1" item="_m1I-0pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m1rxYZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m1rxYpNmEd-t__VbHVm41w" property="_m1rxY5NmEd-t__VbHVm41w" state="_m1rxYZNmEd-t__VbHVm41w" children="_m1wC0pNmEd-t__VbHVm41w _m1zGIpNmEd-t__VbHVm41w"/>
+  <TalendProperties:Property xmi:id="_m1rxY5NmEd-t__VbHVm41w" id="_m1rxYJNmEd-t__VbHVm41w" label="Teradata" creationDate="2010-07-19T14:51:14.678-0400" version="0.1" item="_m1rxYpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m1wC0ZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m1wC0pNmEd-t__VbHVm41w" property="_m1wC05NmEd-t__VbHVm41w" state="_m1wC0ZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER">
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataAggregate_0.1.properties#_m12JcpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataColumnList_0.1.properties#_m15z0pNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataCreateSourceTable_0.1.properties#_m1_TYpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataCreateTargetTable_0.1.properties#_m2EL4pNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataDropSourceTable_0.1.properties#_m2LgopNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataDropTargetTable_0.1.properties#_m2PyEpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataFilterColumns_0.1.properties#_m2UqkpNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataFilterRow_0.1.properties#_m2r28pNmEd-t__VbHVm41w"/>
+    <children xsi:type="TalendProperties:SQLPatternItem" href="sqlPatterns/Teradata/system/TeradataTableList_0.1.properties#_m2wIYpNmEd-t__VbHVm41w"/>
+  </TalendProperties:FolderItem>
+  <TalendProperties:Property xmi:id="_m1wC05NmEd-t__VbHVm41w" id="_m1wC0JNmEd-t__VbHVm41w" label="system" creationDate="2010-07-19T14:51:14.685-0400" version="0.1" item="_m1wC0pNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_m1zGIZNmEd-t__VbHVm41w"/>
+  <TalendProperties:FolderItem xmi:id="_m1zGIpNmEd-t__VbHVm41w" property="_m1zGI5NmEd-t__VbHVm41w" state="_m1zGIZNmEd-t__VbHVm41w" type="SYSTEM_FOLDER"/>
+  <TalendProperties:Property xmi:id="_m1zGI5NmEd-t__VbHVm41w" id="_m1zGIJNmEd-t__VbHVm41w" label="UserDefined" creationDate="2010-07-19T14:51:14.690-0400" version="0.1" item="_m1zGIpNmEd-t__VbHVm41w" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_jJ5HQRQqEeC5mtDvsyJ3Tg"/>
+  <TalendProperties:FolderItem xmi:id="_jJ5HQhQqEeC5mtDvsyJ3Tg" property="_jJ5HQxQqEeC5mtDvsyJ3Tg" state="_jJ5HQRQqEeC5mtDvsyJ3Tg" children="_jJ5HRhQqEeC5mtDvsyJ3Tg"/>
+  <TalendProperties:Property xmi:id="_jJ5HQxQqEeC5mtDvsyJ3Tg" id="_jJ5HQBQqEeC5mtDvsyJ3Tg" label="configuration" creationDate="2010-12-30T10:36:20.148-0500" version="0.1" item="_jJ5HQhQqEeC5mtDvsyJ3Tg" author="_lvdwMJNmEd-t__VbHVm41w"/>
+  <TalendProperties:ItemState xmi:id="_jJ5HRRQqEeC5mtDvsyJ3Tg"/>
+  <TalendProperties:FolderItem xmi:id="_jJ5HRhQqEeC5mtDvsyJ3Tg" property="_jJ5HRxQqEeC5mtDvsyJ3Tg" state="_jJ5HRRQqEeC5mtDvsyJ3Tg"/>
+  <TalendProperties:Property xmi:id="_jJ5HRxQqEeC5mtDvsyJ3Tg" id="_jJ5HRBQqEeC5mtDvsyJ3Tg" label="ExpressionBuilder" creationDate="2010-12-30T10:36:20.148-0500" version="0.1" item="_jJ5HRhQqEeC5mtDvsyJ3Tg" author="_lvdwMJNmEd-t__VbHVm41w"/>
+</xmi:XMI>

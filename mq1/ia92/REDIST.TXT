@@ -1,0 +1,5 @@
+Files which may be redistributed in object code form (see SupportPac license):
+
+J2ME_MIDP\wmqtt.jar
+J2ME_MIDP\wmqttSample.jar
+J2SE\wmqtt.jar

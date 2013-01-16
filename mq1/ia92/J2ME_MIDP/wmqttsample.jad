@@ -1,0 +1,10 @@
+MIDlet-Name: wmqttsample
+MIDlet-Version: 1.4.52
+MIDlet-Vendor: IBM WebSphere MQ Development
+MIDlet-Jar-Size: 53665
+MIDlet-Jar-URL: wmqttsample.jar
+MicroEdition-Profile: MIDP-1.0
+MicroEdition-Configuration: CLDC-1.0
+MIDlet-1: Echo,,com.ibm.mqttsample.midpapp.Echo
+MIDlet-Description: IBM WebSphere MQ Telemetry Transport (SupportPac IA92)
+MIDlet-Info-URL: http://www.ibm.com/webspheremq/integrator/telemetry

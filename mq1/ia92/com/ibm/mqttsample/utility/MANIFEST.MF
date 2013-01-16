@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: com.ibm.mqttsample.utility.MQTTFrame
+Class-Path: wmqtt.jar
+Bundle-Copyright:  (C) Copyright IBM Corp. 2002, 2007 All Rights Reserved.
