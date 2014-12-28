@@ -29,6 +29,7 @@ EthernetServer server(80);
 // moisture sensor
 int moistureSensor = 4;
 int moisture_val;
+float moisture_volts = moisture_val * 5.0 /1024 ;
 
 
 
@@ -145,7 +146,7 @@ float getTempF(DeviceAddress deviceAddress) {
 void loop(void)
 {
   //standard delay for me
-  delay(1000);
+  delay(5000);
   // call sensors.requestTemperatures() to issue a global temperature
   // request to all devices on the bus
   Serial.print("Requesting temperatures...");
@@ -182,7 +183,7 @@ void loop(void)
           client.println("HTTP/1.1 200 OK");
           client.println("Content-Type: text/html");
           client.println("Connection: close");  // the connection will be closed after completion of the response
-          client.println("Refresh: 5");  // refresh the page automatically every 5 sec
+          client.println("Refresh: 60");  // refresh the page automatically every 5 sec
           client.println();
           client.println("<!DOCTYPE HTML>");
           client.println("<html>");
@@ -201,13 +202,24 @@ void loop(void)
           client.println("<hr />");
           client.print( "<br/>insideThermometer: ");
           client.print(getTempF(insideThermometer));
-          client.println("<br />");
           client.print( "<br/>outsideThermometer: ");
           client.print(getTempF(outsideThermometer));
-          client.println("<br />");
           client.print( "<br/>externalThermometer: ");
           client.print(getTempF(externalThermometer));
           client.println("<br />");
+
+          client.println("<hr />");
+          client.print("Moisture (A4) at: ");
+          client.print( moisture_val);
+          client.print(" volts ");
+          client.print(float(moisture_val)*5/1023);
+
+          client.print("<br/>Light (A2)      at: ");
+          client.print( analogRead(A2));
+          client.print(" volts ");
+          client.print(float(analogRead(A2))*5/1023);
+
+
 
           client.println("</html>");
           break;
