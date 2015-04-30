@@ -1,16 +1,24 @@
-/*Kyle Bowerman 12/23/2014
-From: File MyMultiple1wireTemprature
+/*Kyle Bowerman 12/23/2014, 12/27/2014
+From: File PilgrimV0.1.ino
   + web server
 */
 #include <OneWire.h>
+#include <Streaming.h>
 #include <DallasTemperature.h>
 #include <SPI.h>
 #include <Ethernet.h>
+#include <EEPROM.h>
+#include "Statistic.h"
+
+Statistic myStats;
+
+
 
 // Data wire is plugged into port 2 on the Arduino
 #define ONE_WIRE_BUS 3
 #define TEMPERATURE_PRECISION 9
-#define SKETCHNAME "PilgrimV0.1.ino"
+#define SKETCHNAME "PilgrimV0.2.ino"
+
 
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 OneWire oneWire(ONE_WIRE_BUS);
@@ -22,23 +30,29 @@ DallasTemperature sensors(&oneWire);
 DeviceAddress insideThermometer, outsideThermometer, externalThermometer;
 
 //ethernet
-byte mac[] = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
+byte mac[]  = { 0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 IPAddress ip(192, 168, 11, 82);
 EthernetServer server(80);
 
 // moisture sensor
 int moistureSensor = 4;
 int moisture_val;
+float moisture_volts = moisture_val * 5.0 /1024 ;
+int debugTemp = 1;
+int debugWeb =1;
+int lc =0;
+int slot =0;
+float mArray[10];
 
 
-
-void setup(void)
-{
+void setup(void) {
   // start serial port
   Serial.begin(9600);
   Serial.println("Dallas Temperature IC Control Library Demo");
   Serial.print("File: ");
   Serial.print(SKETCHNAME);
+
+  myStats.clear(); //explicitly start clean
 
 
   // start the Ethernet connection and the server:
@@ -98,8 +112,7 @@ void setup(void)
 }
 
 // function to print a device address
-void printAddress(DeviceAddress deviceAddress)
-{
+void printAddress(DeviceAddress deviceAddress) {
   for (uint8_t i = 0; i < 8; i++)
   {
     // zero pad the address if necessary
@@ -109,8 +122,7 @@ void printAddress(DeviceAddress deviceAddress)
 }
 
 // function to print the temperature for a device
-void printTemperature(DeviceAddress deviceAddress)
-{
+void printTemperature(DeviceAddress deviceAddress) {
   float tempC = sensors.getTempC(deviceAddress);
   Serial.print("Temp C: ");
   Serial.print(tempC);
@@ -119,16 +131,14 @@ void printTemperature(DeviceAddress deviceAddress)
 }
 
 // function to print a device's resolution
-void printResolution(DeviceAddress deviceAddress)
-{
+void printResolution(DeviceAddress deviceAddress) {
   Serial.print("Resolution: ");
   Serial.print(sensors.getResolution(deviceAddress));
   Serial.println();
 }
 
 // main function to print information about a device
-void printData(DeviceAddress deviceAddress)
-{
+void printData(DeviceAddress deviceAddress) {
   Serial.print("Device Address: ");
   printAddress(deviceAddress);
   Serial.print(" ");
@@ -141,39 +151,126 @@ float getTempF(DeviceAddress deviceAddress) {
     return DallasTemperature::toFahrenheit(tempC);
 }
 
+void printEEPROM(){
+  Serial.print(" printing the EEPROM");
+  for(int x = 0; x < 512; x++){
+    Serial.print(x);
+    Serial.print('\t');
+    Serial.print(EEPROM.read(x));
+    Serial.println();
+  }
+}
 
-void loop(void)
-{
+void clearEEPROM(){
+  for(int k=1; k <512; k++){  // clear the EEPROM
+    EEPROM.write(k,0);
+  }
+}
+
+void displayMenu() {
+  Serial << endl << "Serial Input menu:" << endl;
+  Serial << " e = print the eeprom " << endl;
+  Serial << " c = clear the eeprom: " << endl;
+  Serial << " t = toggle the temprature debug " << endl;
+  Serial << " w = toggle the Webserver debug " << endl;
+  Serial << " m = print this menu " << endl;
+
+}
+
+//----------- Begin Loop --------------
+
+void loop(void) {
+
+  //increment loopcounter lc
+  lc++;
+  slot++;
+  if (slot == 10) slot =0;
+
+ // List for serial commands
+ if (Serial.available() > 0) {
+   int inByte = Serial.read();
+   switch (inByte) {
+     case 'e': //print eeprom
+      printEEPROM();
+     break;
+     case 'c': //clear eeprom
+      clearEEPROM();
+      Serial.println("cleared the EEPROM");
+     break;
+      case 'm':
+        displayMenu();
+      break;
+      case 't':  //toggle temp debug
+        if (debugTemp==1) {
+          debugTemp = 0;
+          Serial.println("Temp debugging off");
+        } else {
+          debugTemp = 1;
+          Serial.println("Temp debugging ON");
+        }
+      break;
+      case 'w':
+        if (debugWeb==1) {
+          debugWeb=0;
+          Serial << " Web debugging turrned off " << endl;
+        } else {
+          debugWeb=1;
+          Serial << " Web debugging turned on " << endl;
+        }
+      break;
+
+    default:
+      Serial.println("Type m for input command help");
+   }
+ }
+
+
+
+
   //standard delay for me
-  delay(1000);
+  delay(5000);
   // call sensors.requestTemperatures() to issue a global temperature
   // request to all devices on the bus
-  Serial.print("Requesting temperatures...");
-  sensors.requestTemperatures();
-  Serial.println("DONE");
+  if (debugTemp == 1 ) {
+    Serial.print("Requesting temperatures...");
+    sensors.requestTemperatures();
+    Serial.println("DONE");
 
-  // print the device information
-  printData(insideThermometer);
-  printData(outsideThermometer);
-  printData(externalThermometer);
+    // print the device information
+    printData(insideThermometer);
+    printData(outsideThermometer);
+    printData(externalThermometer);
+  }
 
   //print the moisture sensure value
   moisture_val = analogRead(moistureSensor);
-  Serial.print("moisture sensor reads ");
-  Serial.println(moisture_val);
+  Serial << lc  << "\tmoisture: " << moisture_val << "\t light: " << analogRead(A2) << " slot " << slot << endl;
+  mArray[slot] = moisture_val;
+  myStats.clear();
+  for (int x = 0; x<10; x++){
+    Serial << mArray[x] << "\t";
+    myStats.add(mArray[x]*10);
+  }
+  Serial << endl;
+  //myStats.add(mArray);
+  Serial << "average: " << myStats.average()/10 << endl;
+  Serial << "count: " << myStats.count() << endl;
+  Serial << "std dev: " << myStats.pop_stdev() << endl;
+
+
 
 
   //Web server
     // listen for incoming clients
   EthernetClient client = server.available();
   if (client) {
-    Serial.println("new client");
+    if(debugWeb==1) Serial.println("new client");
     // an http request ends with a blank line
     boolean currentLineIsBlank = true;
     while (client.connected()) {
       if (client.available()) {
         char c = client.read();
-        Serial.write(c);
+        if(debugWeb==1) Serial.write(c);
         // if you've gotten to the end of the line (received a newline
         // character) and the line is blank, the http request has ended,
         // so you can send a reply
@@ -198,16 +295,24 @@ void loop(void)
             client.print(sensorReading);
             client.println("<br />");
           }
+
+          client << "<hr/>" << endl;
+          client << " insideThermometer: " << getTempF(insideThermometer) << "<br/>" << endl;
+          client << " outsideThermometer: " << getTempF(outsideThermometer) << "<br/>" << endl;
+          client << " externalThermometer: " << getTempF(externalThermometer) << "<br/>" << endl;
+
           client.println("<hr />");
-          client.print( "<br/>insideThermometer: ");
-          client.print(getTempF(insideThermometer));
-          client.println("<br />");
-          client.print( "<br/>outsideThermometer: ");
-          client.print(getTempF(outsideThermometer));
-          client.println("<br />");
-          client.print( "<br/>externalThermometer: ");
-          client.print(getTempF(externalThermometer));
-          client.println("<br />");
+          client.print("Moisture (A4) at: ");
+          client.print( moisture_val);
+          client.print(" volts ");
+          client.print(float(moisture_val)*5/1023);
+
+          client.print("<br/>Light (A2)      at: ");
+          client.print( analogRead(A2));
+          client.print(" volts ");
+          client.print(float(analogRead(A2))*5/1023);
+
+
 
           client.println("</html>");
           break;
@@ -226,7 +331,7 @@ void loop(void)
     delay(1);
     // close the connection:
     client.stop();
-    Serial.println("client disconnected");
+    if(debugWeb==1) Serial.println("client disconnected");
   }
 
 
