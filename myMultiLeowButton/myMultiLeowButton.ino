@@ -2,6 +2,7 @@
  * Name: myMultiLeowButton
  * was  : TH02_dev demo
  * Usage       : DIGITAL I2C HUMIDITY AND TEMPERATURE SENSOR
+ *             : seedstudio RGB Serial LCD (https://github.com/Seeed-Studio/Grove_LCD_RGB_Backlight)
  * Author      : Oliver Wang from Seeed Studio
  * Version     : V0.1
 */
@@ -19,23 +20,18 @@ const int buttonPin = 4;    // the number of the pushbutton pin
 int m1Pin = A0;
 float m1Value = 0;
 float m1ValuePercent = 0;
-int displayMode = 1;
+String displayMode = "auto";
+boolean DEBUG = false;
 // displayMode 1 = Auto
 // displayMode 0 = Off
 
-int buttonState;             // the current reading from the input pin
-int lastButtonState = LOW;   // the previous reading from the input pin
-
-// the following variables are long's because the time, measured in miliseconds,
-// will quickly become a bigger number than can be stored in an int.
-long lastDebounceTime = 0;  // the last time the output pin was toggled
-long debounceDelay = 50;    // the debounce time; increase if the output flickers
+// Variables will change:
+int buttonPushCounter = 0;   // counter for the number of button presses
+int buttonState = 0;         // current state of the button
+int lastButtonState = 0;     // previous state of the button
 
 
-void setup()
-
-
-{
+void setup() {
 
   pinMode(A0, INPUT);
   pinMode(buttonPin, INPUT);
@@ -48,15 +44,12 @@ void setup()
   /* Reset HP20x_dev */
   TH02.begin();
   lcd.begin(16, 2);
-    // Print a message to the LCD.
-  lcd.print("myTHO2 demo");
+  // Print a message to the LCD.
+  lcd.print("myMultiLeowButton");
   delay(100);
 
   /* Determine TH02_dev is available or not */
   Serial.println("TH02_dev is available.\n");
-
-
-
 }
 
 
@@ -64,68 +57,21 @@ void loop()
 {
   unsigned long currentMillis = millis();  //Blink without delay
 
-  //Begin Button Logic - see Debounce Example
 
-  int reading = digitalRead(buttonPin);
-  // If the switch changed, due to noise or pressing:
-  if (reading != lastButtonState) {
-    // reset the debouncing timer
-    Serial << "Button Pressed the displayMode is " << displayMode << endl;
-    Serial << "reading is " << reading << endl;
-    Serial << "lastButtonState " << lastButtonState << endl;
-    Serial << "buttonState " << buttonState << endl;
-    Serial << "lastDebounceTime " << lastDebounceTime << endl;
-    //Serial.println(displayMode);
-    lastDebounceTime = millis();
-  }
-  if ((millis() - lastDebounceTime) > debounceDelay) {
-    // whatever the reading is at, it's been there for longer
-    // than the debounce delay, so take it as the actual current state:
+  checkButton();
 
+  if  (currentMillis % 7000 == 0 && DEBUG == true) {
+    Serial << "DEBUG: " << "buttonPushCounter= " << buttonPushCounter << endl;
+    Serial << "DEBUG: " << "displayMode= " << displayMode << endl;
 
-    // if the button state has changed:
-    if (reading != buttonState) {
-      buttonState = reading;
-      Serial << "Button Pressed at " << millis()/1000 << endl;
-
-      // There been a change do some stuff
-      if (displayMode == 1 ) {
-        displayMode = 0;
-      }
-      else if (displayMode == 0 ) {
-        displayMode = 1;
-      }
-    }
   }
 
-  // save the reading.  Next time through the loop,
-  // it'll be the lastButtonState:
-    lastButtonState = reading;
 
-
-  //End Button Logic
-
-  if (displayMode == 1 ) {
-    //delay(5000);
+  if (displayMode == "auto" ) {
     if (currentMillis % 5000 == 0 ) doTemp();
-    //delay(5000);
     if (currentMillis % 10000 == 0 ) doHumidity();
-    //delay(5000);
     if (currentMillis % 20000 == 0 ) doMoisture();
-    //delay(5000);
-    //lcd.clear(); // clear the moisture for the lcd
-    //lcd.print(millis());  //print the millis
-    if  (currentMillis % 7000 == 0 ) {
-      Serial << "DEBUG" << "Button Pressed the displayMode is " << displayMode << endl;
-      Serial << "DEBUG" << "reading is " << reading << endl;
-      Serial << "DEBUG" << "lastButtonState " << lastButtonState << endl;
-      Serial << "DEBUG" << "buttonState " << buttonState << endl;
-      Serial << "DEBUG" << "lastDebounceTime " << lastDebounceTime << endl;
-    }
   }
-
-  if (displayMode == 0 )  closeDisplay();
-  if (displayMode == 1 )  openDisplay();
 
 
 
@@ -133,7 +79,64 @@ void loop()
 
 //---------------- End main
 
-void doTemp () {
+void checkButton() {
+  // read the pushbutton input pin:
+   buttonState = digitalRead(buttonPin);
+
+   // compare the buttonState to its previous state
+  if (buttonState != lastButtonState) {
+  // if the state has changed, increment the counter
+    if (buttonState == HIGH) {
+      // if the current state is HIGH then the button
+      // wend from off to on:
+      buttonPushCounter++;
+      Serial.println("on");
+      Serial.print("number of button pushes:  ");
+      Serial.println(buttonPushCounter);
+
+     // change to switch case
+      if ( buttonPushCounter  == 0 ) displayMode = "auto";  //logic in main
+      if ( buttonPushCounter == 1 ) {
+        displayMode = "off";
+        closeDisplay();
+      }
+      if ( buttonPushCounter == 2 ) {
+        displayMode = "temp";
+        doTemp();
+        }
+      if ( buttonPushCounter == 3 ) {
+        displayMode = "humdity";
+        doHumidity();
+        }
+      if ( buttonPushCounter == 4 ) {
+        displayMode = "moisture";
+        doMoisture();
+      }
+
+      if ( buttonPushCounter == 5 ) {
+        buttonPushCounter = 0;
+        displayMode = "auto";
+        //  no function to call auto is part of the main loop
+
+
+    }
+    else {
+      // if the current state is LOW then the button
+      // wend from on to off:
+      Serial.println("off");
+    }
+  }
+  // save the current state as the last state,
+  //for next time through the loop
+  Serial << "DEBUG: " << "buttonPushCounter= " << buttonPushCounter << endl;
+  Serial << "DEBUG: " << "displayMode= " << displayMode << endl;
+  lastButtonState = buttonState;
+ }
+}
+
+
+
+void doTemp() {
      // add a delay at 5 deconds
    //delay(5000);
    float temper = TH02.ReadTemperature();
@@ -182,8 +185,8 @@ void closeDisplay() {
    lcd.clear();
    lcd.setRGB(255,255,255);
    lcd.print("turning off display in 5 seconds");
-   delay(5000);
-   lcd.noDisplay();
+   delay(500);
+   //lcd.noDisplay();
    lcd.setRGB(0,0,0);
 
 }
