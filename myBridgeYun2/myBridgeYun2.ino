@@ -7,6 +7,7 @@
  you can create your own API when using REST style
  calls through the browser.
  1/15/2015 Added one wite temp sensor
+ 5/8/2015 trying to add oled and run grove on top of yun2 had to move OneWire to bus to D4
 
  Possible commands created in this shetch:
 
@@ -32,9 +33,12 @@ Modified By Kyle Bowerman 1/6/2015
 #include <Streaming.h>
 #include <OneWire.h>
 #include <DallasTemperature.h>
+#include <SeeedGrayOLED.h>
+#include <avr/pgmspace.h>
+#include <Wire.h>
 
 
-#define ONE_WIRE_BUS 2
+#define ONE_WIRE_BUS 4
 #define TEMPERATURE_PRECISION 12
 
 // Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
@@ -57,8 +61,26 @@ YunServer server;
 
 //----------- Setup ------------------
 
-  void setup() {
-    // Bridge startup
+void setup() {
+
+ //OLED Setup
+  Wire.begin();
+  SeeedGrayOled.init();             //initialize SEEED OLED display
+  SeeedGrayOled.clearDisplay();     //Clear Display.
+  SeeedGrayOled.setNormalDisplay(); //Set Normal Display Mode
+  SeeedGrayOled.setVerticalMode();  // Set to vertical mode for displaying text
+
+  SeeedGrayOled.setTextXY(0,0);  //set Cursor to ith line, 0th column
+  SeeedGrayOled.setGrayLevel(10); //Set Grayscale level. Any number between 0 - 15.
+  SeeedGrayOled.putString("myBridgeYun"); //Print Hello World
+  SeeedGrayOled.setTextXY(1,0);
+  SeeedGrayOled.putString("+ Grove");
+  SeeedGrayOled.setTextXY(2,0);
+  SeeedGrayOled.putString("+ Oled");
+  SeeedGrayOled.setTextXY(3,0);
+  SeeedGrayOled.putString("- Button");
+
+ // Bridge startup
     pinMode(13, OUTPUT);
     digitalWrite(13, LOW);  // make this the alrm pin
     Bridge.begin();
@@ -123,7 +145,7 @@ YunServer server;
       sensors.setResolution(T3, TEMPERATURE_PRECISION);
 
 
-  }
+ }
 
 
 
@@ -191,7 +213,7 @@ void loop() {
     int inByte = Serial.read();
     switch(inByte) {
       case 'i':
-       Serial << endl << "This is myBridge 1/6/2015" << endl << " 1/15 Adding temp sensor " << "1/29 add thrid temp sensor" << endl;
+       Serial << endl << "This is myBridgeYun2 1/6/2015" << endl << " 1/15 Adding temp sensor " << "1/29 add thrid temp sensor" << endl;
        // locate devices on the bus
        Serial << "Locating devices..." << "Found ";
        Serial.print(sensors.getDeviceCount(), DEC);

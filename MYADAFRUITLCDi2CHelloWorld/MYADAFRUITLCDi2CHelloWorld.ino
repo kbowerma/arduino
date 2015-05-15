@@ -39,7 +39,7 @@ void setup() {
   lcd.print("Hello, world!");
   time = millis() - time;
   Serial.print("Took "); Serial.print(time); Serial.println(" ms");
-  lcd.setBacklight(RED);
+  //lcd.setBacklight(RED);
 }
 
 uint8_t i=0;
@@ -47,9 +47,36 @@ void loop() {
   // set the cursor to column 0, line 1
   // (note: line 1 is the second row, since counting begins with 0):
   lcd.setCursor(0, 1);
+  lcd.print("Kyle");
+  delay(2000);
+  lcd.setCursor(0, 0);
+   lcd.print("Bowerman 7y");
   // print the number of seconds since reset:
   lcd.print(millis()/1000);
+  
+ /* delay(4000);
+     lcd.clear();
+     lcd.setCursor(0,1);
+     lcd.setBacklight(RED);
+    lcd.print("RED");
+     Serial.print("RED ON\n");
+  
 
+  delay(4000);
+    lcd.setBacklight(WHITE);
+     lcd.clear();
+     lcd.print("WHITE");
+     Serial.print("WHITE ON \n\r");
+  delay(4000);
+      lcd.setBacklight(VIOLET);
+     lcd.clear();
+     lcd.print("VIOLET");
+     Serial.print("VIOLET ON\n\r");
+  delay(4000);
+  */
+  
+
+/*
   uint8_t buttons = lcd.readButtons();
 
   if (buttons) {
@@ -75,5 +102,5 @@ void loop() {
       lcd.print("SELECT ");
       lcd.setBacklight(VIOLET);
     }
-  }
+  } */
 }
