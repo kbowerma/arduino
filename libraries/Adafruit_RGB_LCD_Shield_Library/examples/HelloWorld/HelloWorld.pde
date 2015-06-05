@@ -30,7 +30,7 @@ Adafruit_RGBLCDShield lcd = Adafruit_RGBLCDShield();
 void setup() {
   // Debugging output
   Serial.begin(9600);
-  // set up the LCD's number of columns and rows: 
+  // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
 
   // Print a message to the LCD. We track how long it takes since
@@ -39,6 +39,7 @@ void setup() {
   lcd.print("Hello, world!");
   time = millis() - time;
   Serial.print("Took "); Serial.print(time); Serial.println(" ms");
+  Serial.print("libraries/Adafruit_RGB_LCD_Shield_Library/examples/HelloWorld/HelloWorld.pde");
   lcd.setBacklight(RED);
 }
 

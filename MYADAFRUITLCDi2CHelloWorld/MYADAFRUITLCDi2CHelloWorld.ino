@@ -30,7 +30,7 @@ Adafruit_RGBLCDShield lcd = Adafruit_RGBLCDShield();
 void setup() {
   // Debugging output
   Serial.begin(9600);
-  // set up the LCD's number of columns and rows: 
+  // set up the LCD's number of columns and rows:
   lcd.begin(16, 2);
 
   // Print a message to the LCD. We track how long it takes since
@@ -39,6 +39,7 @@ void setup() {
   lcd.print("Hello, world!");
   time = millis() - time;
   Serial.print("Took "); Serial.print(time); Serial.println(" ms");
+  Serial.print("MYADAFRUITLCDi2CHelloWorld/MYADAFRUITLCDi2CHelloWorld.ino");
   //lcd.setBacklight(RED);
 }
 
@@ -53,14 +54,14 @@ void loop() {
    lcd.print("Bowerman 7y");
   // print the number of seconds since reset:
   lcd.print(millis()/1000);
-  
+
  /* delay(4000);
      lcd.clear();
      lcd.setCursor(0,1);
      lcd.setBacklight(RED);
     lcd.print("RED");
      Serial.print("RED ON\n");
-  
+
 
   delay(4000);
     lcd.setBacklight(WHITE);
@@ -74,7 +75,7 @@ void loop() {
      Serial.print("VIOLET ON\n\r");
   delay(4000);
   */
-  
+
 
 /*
   uint8_t buttons = lcd.readButtons();
