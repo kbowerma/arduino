@@ -6,6 +6,7 @@
 #include <Wire.h>  // Include Wire if you're using I2C
 #include <SPI.h>  // Include SPI if you're using SPI
 #include <SFE_MicroOLED.h>  // Include the SFE_MicroOLED library
+
 #include <Encoder.h> // enocer libarary
 
 //////////////////////////
@@ -24,6 +25,7 @@ MicroOLED oled(PIN_RESET, DC_JUMPER);    // I2C declaration
 
 
 //Endocer declaration
+
 Encoder myEnc(7, 6);
 
 
@@ -77,22 +79,26 @@ void loop() {
     executeCommand(inputLine);
   }
 
-  timer(&printAnalogPins, 2000, timer1); // Call printAnalogPins every 2000ms
+//  timer(&printAnalogPins, 2000, timer1); // Call printAnalogPins every 2000ms
   //timer(&hello, 10000, timer2); // Call hello every 10 seconds
-  timer(&printDot, 200, timer3); // Just print dots every 200ms
-  timer(&kyleText, 5000, timer4); // call kyleText every 5 seconds
+//  timer(&printDot, 200, timer3); // Just print dots every 200ms
+  timer(&kyleText, 10000, timer4); // call kyleText every 5 seconds
   //timer(&printMode, 10000, timer2); //clear the page every 7 seconds
 
   //should only call this when the mode changes
   long newPosition = myEnc.read();
   if (newPosition != oldPosition) {
     oldPosition = newPosition;
-    printMode();
+  //  printMode();
 
-    /*oled.setCursor(4,0);
-    oled.print( "now");
+    oled.setCursor(0,0);
+    oled.print( "lmode: ");
+  //  oled.setCursor(6,0);  //clear the Text
+  //  oled.print("__");
+  //  oled.setCursor(6,0);
+    oled.print(newPosition);
     Serial.println(newPosition);
-    */
+    oled.display();
 
   }
 }
@@ -101,57 +107,20 @@ void loop() {
 
 void printMode()
 {
+  // noInterrupts(); this did not help the crash
   long cPosition = myEnc.read();
   oled.clear(PAGE);            // Clear the display
   oled.setCursor(0, 0);        // Set cursor to top-left
   oled.setFontType(0);
-  oled.print("mode: ");
+  oled.print("imode: ");
   oled.print(cPosition);
   oled.display();
+  // interrupts();
 
 
 }
 
-void kyleText2()
-{
-  // Demonstrate font 2. 10x16. Only numbers and '.' are defined.
-  // This font looks like 7-segment displays.
-  // Lets use this big-ish font to display readings from the
-  // analog pins.
-  for (int i=0; i<10; i++)
-  {
-    int mySeconds = (millis() % 60000)/1000;
-    int myMinutes = (millis() % 3600000)/60000;  //3600000 milliseconds in an hour
-    int myHour = (millis() % 86400000)/3600000; //86400000 miliisceconds in a day
 
-    //oled.clear(PAGE);            // Clear the display
-    //oled.setCursor(0, 0);        // Set cursor to top-left
-    //oled.setFontType(0);         // Smallest font
-  //  oled.print("A3: ");          // Print "A0"
-    //oled.setFontType(1);         // 7-segment font
-  //  oled.print(analogRead(A3));  // Print a0 reading
-    oled.setCursor(0, 12);       // Set cursor to top-middle-left
-    //oled.setFontType(0);         // Repeat
-    oled.print("A4: ");
-    //oled.setFontType(1);
-    oled.print(analogRead(A4));
-    oled.setCursor(0, 24);
-    //oled.setFontType(0);
-    oled.print("A5: ");
-    //oled.setFontType(1);
-    oled.print(analogRead(A5));
-    oled.setCursor(0,36);
-    oled.print("T ");
-    oled.print(myHour);
-    oled.print(":");
-    oled.print(myMinutes);
-    oled.print(":");
-    oled.print(mySeconds);
-    oled.display();
-    delay(100);
-  }
-
-}
 
 void kyleText()
 {
@@ -165,13 +134,13 @@ void kyleText()
     int myMinutes = (millis() % 3600000)/60000;  //3600000 milliseconds in an hour
     int myHour = (millis() % 86400000)/3600000; //86400000 miliisceconds in a day
 
-    oled.clear(PAGE);            // Clear the display
+    //oled.clear(PAGE);            // Clear the display
   //  oled.setCursor(0, 0);        // Set cursor to top-left
-    //oled.setFontType(0);         // Smallest font
-    //oled.print("A0: ");          // Print "A0"
+  //  oled.setFontType(0);         // Smallest font
+    //oled.print("dmode: ");          // Print "A0"
     //oled.setFontType(1);         // 7-segment font
-  //  oled.print(analogRead(A0));  // Print a0 reading
-    printMode();
+  //  oled.print(newPosition);  // Print a0 reading
+    //printMode();
     oled.setCursor(0, 12);       // Set cursor to top-middle-left
     //oled.setFontType(0);         // Repeat
     oled.print("A1: ");
