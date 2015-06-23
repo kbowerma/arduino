@@ -23,9 +23,7 @@
 
 
 
- //////////////////////////////////
- // MicroOLED Object Declaration //
- //////////////////////////////////
+
  //MicroOLED oled(PIN_RESET, PIN_DC, PIN_CS); // SPI declaration
  MicroOLED oled(PIN_RESET, DC_JUMPER);    // I2C declaration
 
@@ -34,7 +32,7 @@
 //   Good Performance: only the first pin has interrupt capability
 //   Low Performance:  neither pin has interrupt capability
 Encoder myEnc(7, 6);
-//   avoid using pins with LEDs attached
+
 int newtime = 0;
 int oldtime = 0;
 
@@ -68,9 +66,20 @@ void loop() {
         Serial.println(newtime - oldtime);
       }
     }
+    if (newPosition == 0 ) {
+      Serial.print("home");
+      oled.clear(ALL);
+      oled.print("\nturning\noff\ndisplay");
+      oled.display();
+      delay(2000);
+      oled.clear(ALL);
+
+    }
+
 
   }
   //delay(10);
+
 }
 
 void showPos(long pos) {

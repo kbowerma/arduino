@@ -2,6 +2,7 @@
 * Matts Timer + OledSimple Text
 * 6.22 Adding encoder
 * 6.23 Fixing encoder from _MyExamples/MyBasic
+* 6.23 apporting trying interuppts
 *
 */
 #include <Wire.h>  // Include Wire if you're using I2C
@@ -37,11 +38,10 @@ unsigned long *timer5 = new unsigned long;
 void setup() {
   oled.begin();    // Initialize the OLED
   oled.clear(ALL); // Clear the display's internal memory
-  //oled.display();  // Display what's in the buffer (splashscreen)
-  //delay(1000);     // Delay 1000 ms
+  oled.display();  // Display what's in the buffer (splashscreen)
   oled.clear(PAGE); // Clear the buffer.
   Serial.begin(9600);
-  delay(1000);
+  delay(1500);
   print("microled_demo");
   int mySeconds = 0;
   int myMinutes = 0;
@@ -58,8 +58,6 @@ void setup() {
   (*timer4) = 0;
   (*timer5) = 0;
 
-  //switch to FALLING, seems more stable
-  attachInterrupt(4, doDispatch, FALLING); //interuppt on pin 7
 }
 
 long oldPosition  = -999;
@@ -77,15 +75,17 @@ void loop() {
 //  timer(&printAnalogPins, 2000, timer1); // Call printAnalogPins every 2000ms
   timer(&hello, 10000, timer2); // Call hello every 10 seconds
   //timer(&printDot, 200, timer3); // Just print dots every 200ms
-  //timer(&kyleText, 5000, timer4); // call kyleText every 5 seconds
+  //timer(&printAnalog, 5000, timer4); // call kyleText every 5 seconds
   //timer(&printMode, 10000, timer2); //clear the page every 7 seconds
 
+   doDispatch();
 
 }
 
 void doDispatch()
 {
   long newPosition = myEnc.read();
+
   if (newPosition != oldPosition) {
     oldtime = newtime;
     newtime = millis();
@@ -96,7 +96,7 @@ void doDispatch()
     if (newPosition % 4 == 0 ) {
       if (newtime - oldtime > 3) {
         //printHead(newPosition);  // lagged behind
-        printMode();
+        printPos();
         Serial.print("newPosition: ");
         Serial.println(newPosition);
       }
@@ -106,11 +106,19 @@ void doDispatch()
       }
     }
   }
+
+  if (newPosition < 0 )  myEnc.write(0); // dont let the postion go below 0
+  //if (newPosition  < 1 ) {closeDisplay(5);} // Close display
+  if (newPosition == 4 )  printAnalog();
+  if (newPosition == 8 )  digitalWrite(13, HIGH);
+  if (newPosition != 8 )  digitalWrite(13, LOW);
+  if (newPosition == 12 ) printTime();
+
 }
 
 
 
-void printMode()
+void printPos()
 {
   long cPosition = myEnc.read();
   oled.clear(PAGE);            // Clear the display
@@ -121,46 +129,43 @@ void printMode()
   oled.display();
 }
 
-void printHead(long postion)
-{
-  oled.clear(PAGE);            // Clear the display
-  oled.setCursor(0, 0);        // Set cursor to top-left
-  oled.setFontType(0);
-  oled.print("imode: ");
-  oled.print(postion);
+void closeDisplay(int timeout) {
+  Serial.print("closing display");
+  oled.clear(ALL);
+  oled.print("sleep in\n");
+  oled.print(timeout);
+  oled.display();
+  delay(timeout * 1000 );
+  oled.clear(ALL);
+}
+
+void printTime() {
+
+  int mySeconds = (millis() % 60000)/1000;
+  int myMinutes = (millis() % 3600000)/60000;  //3600000 milliseconds in an hour
+  int myHour = (millis() % 86400000)/3600000; //86400000 miliisceconds in a day
+  oled.setCursor(0,36);
+  oled.print("T ");
+  oled.print(myHour);
+  oled.print(":");
+  oled.print(myMinutes);
+  oled.print(":");
+  oled.print(mySeconds);
   oled.display();
 }
 
 
-
-void kyleText()
+void printAnalog()
 {
-  // Demonstrate font 2. 10x16. Only numbers and '.' are defined.
-  // This font looks like 7-segment displays.
-  // Lets use this big-ish font to display readings from the
-  // analog pins.
-  //for (int i=0; i<10; i++)
-  //{
     int mySeconds = (millis() % 60000)/1000;
     int myMinutes = (millis() % 3600000)/60000;  //3600000 milliseconds in an hour
     int myHour = (millis() % 86400000)/3600000; //86400000 miliisceconds in a day
 
-    //oled.clear(PAGE);            // Clear the display
-  //  oled.setCursor(0, 0);        // Set cursor to top-left
-  //  oled.setFontType(0);         // Smallest font
-    //oled.print("dmode: ");          // Print "A0"
-    //oled.setFontType(1);         // 7-segment font
-  //  oled.print(newPosition);  // Print a0 reading
-    //printMode();
     oled.setCursor(0, 12);       // Set cursor to top-middle-left
-    //oled.setFontType(0);         // Repeat
     oled.print("A1: ");
-    //oled.setFontType(1);
     oled.print(analogRead(A1));
     oled.setCursor(0, 24);
-    //oled.setFontType(0);
     oled.print("A2: ");
-    //oled.setFontType(1);
     oled.print(analogRead(A2));
     oled.setCursor(0,36);
     oled.print("T ");
@@ -170,12 +175,9 @@ void kyleText()
     oled.print(":");
     oled.print(mySeconds);
     oled.display();
-    //delay(100);
-  //}
-
 }
 
-void printAnalogPins(){
+void printAnalogPins() {
   print("Analog Readout\n");
   print("--------------\n");
   print("Pin A0: " + String(analogRead(0)) + "\n");

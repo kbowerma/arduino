@@ -2,6 +2,7 @@
 * Matts Timer + OledSimple Text
 * 6.22 Adding encoder
 * 6.23 Fixing encoder from _MyExamples/MyBasic
+* 6.23 this sketch is unstable and fast rotary will make it crash
 *
 */
 #include <Wire.h>  // Include Wire if you're using I2C
