@@ -14,6 +14,8 @@
 #define PIN_DC    8  // Connect DC to pin 8
 #define PIN_CS    10 // Connect CS to pin 10
 #define DC_JUMPER 1
+#define COMMON_ANODE
+
 
 // MicroOLED Object Declaration //
 //MicroOLED oled(PIN_RESET, PIN_DC, PIN_CS); // SPI declaration
@@ -33,12 +35,25 @@ unsigned long *timer2 = new unsigned long;
 unsigned long *timer3 = new unsigned long;
 unsigned long *timer4 = new unsigned long;
 unsigned long *timer5 = new unsigned long;
+long oldPosition  = -999;
+int newtime = 0;
+int oldtime = 0;
+int button = 4;
+int bluepin = 11;
+int greenpin = 10;
+int redpin = 5;
+int m_wet = 800;
+int m_ok = 300;
+int m_danger = 100;
+int m_dry = 10;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
+//  delay(2000);  // I need a delay since the oled wont start after a load
   oled.begin();    // Initialize the OLED
   oled.clear(ALL); // Clear the display's internal memory
   oled.display();  // Display what's in the buffer (splashscreen)
+  delay(1000);
   oled.clear(PAGE); // Clear the buffer.
   Serial.begin(9600);
   delay(1500);
@@ -49,6 +64,12 @@ void setup() {
   int myDays = 0;
 
   pinMode(13, OUTPUT);
+  pinMode(button, INPUT);
+  digitalWrite(button, HIGH); // internal pullup
+  pinMode(redpin, OUTPUT);
+  pinMode(greenpin, OUTPUT);
+  pinMode(bluepin, OUTPUT);
+
   //Serial.begin(9600);
   print("\n\nStartup...\n\n");
   // Make sure the timers start at 0
@@ -60,9 +81,7 @@ void setup() {
 
 }
 
-long oldPosition  = -999;
-int newtime = 0;
-int oldtime = 0;
+
 
 // the loop function runs over and over again forever
 void loop() {
@@ -72,7 +91,7 @@ void loop() {
     executeCommand(inputLine);
   }
 
-//  timer(&printAnalogPins, 2000, timer1); // Call printAnalogPins every 2000ms
+  //  timer(&printAnalogPins, 2000, timer1); // Call printAnalogPins every 2000ms
   timer(&hello, 10000, timer2); // Call hello every 10 seconds
   //timer(&printDot, 200, timer3); // Just print dots every 200ms
   //timer(&printAnalog, 5000, timer4); // call kyleText every 5 seconds
@@ -82,8 +101,7 @@ void loop() {
 
 }
 
-void doDispatch()
-{
+void doDispatch() {
   long newPosition = myEnc.read();
 
   if (newPosition != oldPosition) {
@@ -113,13 +131,56 @@ void doDispatch()
   if (newPosition == 8 )  digitalWrite(13, HIGH);
   if (newPosition != 8 )  digitalWrite(13, LOW);
   if (newPosition == 12 ) printTime();
-
+  if (newPosition == 16 ) checkMoisture();
+  //if (newPosition == 16 ) setColor(255,0,0); //red
+  if (newPosition == 20 ) setColor(0,255,0); //green
+  if (newPosition == 24 ) setColor(0,0,255); //blue
+  if (newPosition == 28 ) setColor(255, 255,0); //yellow
+  if (newPosition == 32 ) setColor(80,0,80); //purple
+  if (newPosition == 36 ) setColor(0,255,255); //aqua
+  if (newPosition == 40 ) setColor(255,165,0); //orange
+  if (newPosition < 16 || newPosition > 40 ) {
+     setColor(0,0,0);
+    }
 }
 
+void checkMoisture() {
+  int m1 = analogRead(A1);
+  int m2 = analogRead(A2);
+  int driestValue = 0;
+  oled.clear(PAGE);
+  oled.setCursor(0,12);
+  if (m1 < m2 ) {
+    driestValue = m1;
+    oled.print("m1 ");
+    oled.print(m1);
+  } else {
+    driestValue = m2;
+    oled.print("m2 ");
+    oled.print(m2);
+  }
+  oled.display();
+  // Set the color button
+  if ( driestValue < m_dry ) setColor(255,0,0); //red
+  if ( driestValue > m_dry && driestValue < m_danger ) setColor(255,165,0); //orange
+  if ( driestValue > m_danger && driestValue < m_ok ) setColor(255,255,0); //yellow
+  if ( driestValue > m_ok && driestValue < m_wet ) setColor(0,255,0); //green
+  if ( driestValue > m_wet ) setColor(0,0,255); //blue
+}
 
-
-void printPos()
+void setColor(int red, int green, int blue)
 {
+  #ifdef COMMON_ANODE
+    red = 255 - red;
+    green = 255 - green;
+    blue = 255 - blue;
+  #endif
+  analogWrite(redpin, red);
+  analogWrite(greenpin, green);
+  analogWrite(bluepin, blue);
+}
+
+void printPos() {
   long cPosition = myEnc.read();
   oled.clear(PAGE);            // Clear the display
   oled.setCursor(0, 0);        // Set cursor to top-left
@@ -155,8 +216,7 @@ void printTime() {
 }
 
 
-void printAnalog()
-{
+void printAnalog() {
     int mySeconds = (millis() % 60000)/1000;
     int myMinutes = (millis() % 3600000)/60000;  //3600000 milliseconds in an hour
     int myHour = (millis() % 86400000)/3600000; //86400000 miliisceconds in a day
