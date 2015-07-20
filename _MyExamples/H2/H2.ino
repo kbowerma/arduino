@@ -3,23 +3,36 @@
 * 6.22 Adding encoder
 * 6.23 Fixing encoder from _MyExamples/MyBasic
 * 6.23 apporting trying interuppts
+* 7.2 renamed G2 from NonInrpts-oldedWTimerEncoder
+* 7.2 renamed H2 from G2 for fork to Adafruit Oled 128x32 I2C
 *
 */
 #include <Wire.h>  // Include Wire if you're using I2C
 #include <SPI.h>  // Include SPI if you're using SPI
 #include <SFE_MicroOLED.h>  // Include the SFE_MicroOLED library
 #include <Encoder.h> // enocer libarary
+//Adafruit Oled 128x32
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+
+#define OLED_RESET 9
+Adafruit_SSD1306 display(OLED_RESET);
+
 // MicroOLED Definition //
+/*
 #define PIN_RESET 9  // Connect RST to pin 9
 #define PIN_DC    8  // Connect DC to pin 8
 #define PIN_CS    10 // Connect CS to pin 10
 #define DC_JUMPER 1
+*/
+
+
 #define COMMON_ANODE
 
 
 // MicroOLED Object Declaration //
 //MicroOLED oled(PIN_RESET, PIN_DC, PIN_CS); // SPI declaration
-MicroOLED oled(PIN_RESET, DC_JUMPER);    // I2C declaration
+//MicroOLED oled(PIN_RESET, DC_JUMPER);    // I2C declaration
 
 //Endocer declaration
 Encoder myEnc(7, 6);
@@ -49,13 +62,22 @@ int m_dry = 10;
 
 // the setup function runs once when you press reset or power the board
 void setup() {
-//  delay(2000);  // I need a delay since the oled wont start after a load
-  oled.begin();    // Initialize the OLED
-  oled.clear(ALL); // Clear the display's internal memory
-  oled.display();  // Display what's in the buffer (splashscreen)
-  delay(1000);
-  oled.clear(PAGE); // Clear the buffer.
+
   Serial.begin(9600);
+
+  // by default, we'll generate the high voltage from the 3.3v line internally! (neat!)
+  display.begin(SSD1306_SWITCHCAPVCC, 0x3C);  // initialize with the I2C addr 0x3C (for the 128x32)
+  // init done
+
+  // Show image buffer on the display hardware.
+  // Since the buffer is intialized with an Adafruit splashscreen
+  // internally, this will display the splashscreen.
+  display.display();
+  delay(2000);
+
+  // Clear the buffer.
+  display.clearDisplay();
+
   delay(1500);
   print("microled_demo");
   int mySeconds = 0;
@@ -99,6 +121,36 @@ void loop() {
 
    doDispatch();
 
+  //  testDisplay();
+
+
+}
+
+void testDisplay() {
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0,0);
+  display.println("Hello, world!");
+  display.display();
+  delay(2000);
+  display.setCursor(0,8);
+  display.println("goodbye, world!");
+  display.display();
+  delay(2000);
+  display.setCursor(0,16);
+   display.setTextColor(BLACK, WHITE); // 'inverted' text
+  display.println("line 3 inverted");
+  display.display();
+  delay(2000);
+  display.setCursor(0,24);
+   display.setTextColor(WHITE);
+  display.println("line 4 white");
+  display.display();
+  delay(2000);
+  // Clear the buffer.
+  display.clearDisplay();
+  display.display();
+  delay(2000);
 }
 
 void doDispatch() {
@@ -132,7 +184,7 @@ void doDispatch() {
   if (newPosition != 8 )  digitalWrite(13, LOW);
   if (newPosition == 12 ) printTime();
   if (newPosition == 16 ) checkMoisture();
-  //if (newPosition == 16 ) setColor(255,0,0); //red
+  if (newPosition == 16 ) setColor(255,0,0); //red
   if (newPosition == 20 ) setColor(0,255,0); //green
   if (newPosition == 24 ) setColor(0,0,255); //blue
   if (newPosition == 28 ) setColor(255, 255,0); //yellow
@@ -149,18 +201,18 @@ void checkMoisture() {
   int m1 = analogRead(A1);
   int m2 = analogRead(A2);
   int driestValue = 0;
-  oled.clear(PAGE);
-  oled.setCursor(0,12);
+  display.clearDisplay();
+  display.setCursor(0,12);
   if (m1 < m2 ) {
     driestValue = m1;
-    oled.print("m1 ");
-    oled.print(m1);
+    display.print("m1 ");
+    display.print(m1);
   } else {
     driestValue = m2;
-    oled.print("m2 ");
-    oled.print(m2);
+    display.print("m2 ");
+    display.print(m2);
   }
-  oled.display();
+  display.display();
   // Set the color button
   if ( driestValue < m_dry ) setColor(255,0,0); //red
   if ( driestValue > m_dry && driestValue < m_danger ) setColor(255,165,0); //orange
@@ -168,6 +220,7 @@ void checkMoisture() {
   if ( driestValue > m_ok && driestValue < m_wet ) setColor(0,255,0); //green
   if ( driestValue > m_wet ) setColor(0,0,255); //blue
 }
+
 
 void setColor(int red, int green, int blue)
 {
@@ -181,16 +234,19 @@ void setColor(int red, int green, int blue)
   analogWrite(bluepin, blue);
 }
 
+
+
 void printPos() {
   long cPosition = myEnc.read();
-  oled.clear(PAGE);            // Clear the display
-  oled.setCursor(0, 0);        // Set cursor to top-left
-  oled.setFontType(0);
-  oled.print("imode: ");
-  oled.print(cPosition);
-  oled.display();
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(WHITE);
+  display.setCursor(0, 0);        // Set cursor to top-left
+  display.print("imode: ");
+  display.print(cPosition);
+  display.display();
 }
-
+/*
 void closeDisplay(int timeout) {
   Serial.print("closing display");
   oled.clear(ALL);
@@ -200,20 +256,22 @@ void closeDisplay(int timeout) {
   delay(timeout * 1000 );
   oled.clear(ALL);
 }
+*/
 
 void printTime() {
 
   int mySeconds = (millis() % 60000)/1000;
   int myMinutes = (millis() % 3600000)/60000;  //3600000 milliseconds in an hour
   int myHour = (millis() % 86400000)/3600000; //86400000 miliisceconds in a day
-  oled.setCursor(0,36);
-  oled.print("T ");
-  oled.print(myHour);
-  oled.print(":");
-  oled.print(myMinutes);
-  oled.print(":");
-  oled.print(mySeconds);
-  oled.display();
+  display.clearDisplay();
+  display.setCursor(0,24);
+  display.print("T ");
+  display.print(myHour);
+  display.print(":");
+  display.print(myMinutes);
+  display.print(":");
+  display.print(mySeconds);
+  display.display();
 }
 
 
@@ -222,21 +280,25 @@ void printAnalog() {
     int myMinutes = (millis() % 3600000)/60000;  //3600000 milliseconds in an hour
     int myHour = (millis() % 86400000)/3600000; //86400000 miliisceconds in a day
 
-    oled.setCursor(0, 12);       // Set cursor to top-middle-left
-    oled.print("A1: ");
-    oled.print(analogRead(A1));
-    oled.setCursor(0, 24);
-    oled.print("A2: ");
-    oled.print(analogRead(A2));
-    oled.setCursor(0,36);
-    oled.print("T ");
-    oled.print(myHour);
-    oled.print(":");
-    oled.print(myMinutes);
-    oled.print(":");
-    oled.print(mySeconds);
-    oled.display();
+    display.clearDisplay();  // had to clear display sinc ethey are writing overeachother
+    display.setCursor(0, 12);       // Set cursor to top-middle-left
+    display.print("A1: ");
+    display.print(analogRead(A1));
+    //display.setCursor(64, 12);  // Was 0,24
+    display.print(" A2: ");
+    display.print(analogRead(A2));
+    display.setCursor(0,24);
+    display.print("T ");
+    display.print(myHour);
+    display.print(":");
+    display.print(myMinutes);
+    display.print(":");
+    display.print(mySeconds);
+
+    display.display();
+
 }
+
 
 void printAnalogPins() {
   print("Analog Readout\n");

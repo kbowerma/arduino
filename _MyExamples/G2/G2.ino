@@ -3,6 +3,7 @@
 * 6.22 Adding encoder
 * 6.23 Fixing encoder from _MyExamples/MyBasic
 * 6.23 apporting trying interuppts
+* 7.2 renamed G2 from NonInrpts-oldedWTimerEncoder
 *
 */
 #include <Wire.h>  // Include Wire if you're using I2C
